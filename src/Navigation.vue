@@ -1,7 +1,12 @@
 <script setup>
 import { ref } from 'vue'
+import AppearanceSwich from './components/AppearanceSwitch.vue'
+
 const navItems = ref([
-  { name: 'Home', link: '/Home', }, { name: 'TIC80', link: '/TIC80', },
+  { name: 'Home', link: '/home', },
+  { name: 'Note', link: '/note', },
+  { name: 'Study', link: '/study' },
+  { name: 'TIC80', link: '/tic80', },
 ])
 </script>
 
@@ -10,8 +15,9 @@ const navItems = ref([
     <router-link class="nav-logo" to='/Home'>Home</router-link>
     
     <div class="nav-links">
-      <router-link v-for="item in navItems" :to='item.link'>{{ item.name }}</router-link>
+      <router-link v-for="item in navItems" :to="item.link">{{ item.name }}</router-link>
     </div>
+    <AppearanceSwich class="nav-switch"></AppearanceSwich>
   </div>
 </template>
 
@@ -20,9 +26,10 @@ const navItems = ref([
   position: relative;
   font-size: 16px;
   height: var(--yr-nav-height);
-  border-bottom: 1px solid #4034542f;
-  background-color: #ffffffb3;
-  padding: 0 10%;
+  border-bottom: 1px solid var(--yr-c-divider);
+  background-color: var(--yr-c-bg-opaque);
+  padding: 0 15%;
+  align-items: center;
   display: flex;
   justify-content: space-between;
 }
@@ -37,17 +44,17 @@ const navItems = ref([
 a {
   align-items: center;
   padding: 0 12px;
-  color: #403454;
+  color: var(--yr-c-text);
   white-space: nowrap;
   text-decoration:none;
 }
 a:hover {
-  color: #f58f54;
-  transition: color .25s;
+  color: var(--yr-c-brand);
+  /* transition: color .25s; */
 }
 a:hover,
 a.router-link-active,
 a.router-link-exact-active {
-   cursor: pointer;
- }
+  cursor: pointer;
+}
 </style>

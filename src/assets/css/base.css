@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  color: #333;
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: sans-serif, "Georgia", "PingFang SC", "Microsoft YaHei";
+}
+
+:root {
+  --yr-nav-padding: 20px;
+  --yr-nav-height: 50px;
+  --yr-z-index-nav: 20;
+}
+
+:root {
+  --yr-c-bg: var(--yr-c-white);
+  --yr-c-bg-opaque: var(--yr-c-white-opaque);
+  --yr-c-text: var(--yr-c-black);
+  --yr-c-text-pale: var(--yr-c-grey);
+  --yr-c-divider: var(--yr-c-black-opaque);
+  --yr-c-brand: var(--yr-c-orange-light);
+}
+
+:root {
+  --yr-c-black: #000000;
+  --yr-c-black-opaque: #00000069;
+  --yr-c-grey: #ccc;
+  --yr-c-white: #ffffff;
+  --yr-c-white-opaque: #ffffffb3;
+  --yr-c-orange-light: #f58f54;
+}

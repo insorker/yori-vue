@@ -14,6 +14,7 @@ import HeroImage from './components/Heroimage.vue'
   margin: var(--yr-nav-height) auto 0px;
 }
 .welcome {
+  color: var(--yr-c-text);
   text-align: center;
 }
 </style>
