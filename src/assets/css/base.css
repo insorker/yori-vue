@@ -7,11 +7,21 @@ body {
 }
 
 :root {
+  /* header */
   --yr-header-height: 50px;
+  /* nav */
   --yr-nav-padding: 20px;
+  /* switch */
+  --yr-switch-height: 22px;
+  --yr-switch-padding: 4px;
+  --yr-switch-width: calc((var(--yr-switch-height) * 2) - var(--yr-switch-padding));
+  --yr-slider-height: calc(var(--yr-switch-height) - var(--yr-switch-padding));
+  --yr-slider-on: calc(var(--yr-switch-height) - var(--yr-switch-padding));
+  /* title */
   --yr-title-margin: 30px;
   --yr-title-size-big: 4rem;
-  --yr-title-size-small: 1rem;
+  --yr-title-size-small: 1.5rem;
+  /* z-index */
   --yr-z-index-nav: 20;
   --yr-z-index-content: 10;
 }

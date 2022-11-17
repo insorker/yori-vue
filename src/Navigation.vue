@@ -8,6 +8,9 @@ const navLinks = ref([
   { name: 'Study', link: '/study' },
   { name: 'TIC80', link: '/tic80', },
 ])
+function backgroundChange(checked) {
+  /* bg */
+}
 </script>
 
 <template>
@@ -17,6 +20,7 @@ const navLinks = ref([
     <div class="YRNavLinks">
       <router-link class="YRNavLink" v-for="link in navLinks" :to="link.link">{{ link.name }}</router-link>
     </div>
-    <AppearanceSwich class="nav-switch"></AppearanceSwich>
+    <AppearanceSwich @checked="(checked) => backgroundChange(checked)">
+    </AppearanceSwich>
   </div>
 </template>

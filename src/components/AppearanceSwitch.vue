@@ -1,6 +1,16 @@
+<script setup>
+import { ref, watch } from 'vue';
+
+const emit = defineEmits(['checked'])
+const checked = ref(true)
+watch(checked, () => {
+  emit('checked', checked)
+})
+</script>
+
 <template>
   <label class="switch">
-    <input type="checkbox">
+    <input type="checkbox" v-model="checked">
     <span class="slider round"></span>
   </label>
 </template>
@@ -10,8 +20,8 @@
 .switch {
   position: relative;
   display: inline-block;
-  width: 40px;
-  height: 22px;
+  width: var(--yr-switch-width);
+  height: var(--yr-switch-height);
 }
 
 /* Hide default HTML checkbox */
@@ -37,10 +47,10 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 18px;
-  width: 18px;
-  left: 2px;
-  bottom: 2px;
+  height: var(--yr-slider-height);
+  width: var(--yr-slider-height);
+  left: calc(var(--yr-switch-padding) / 2);
+  bottom: calc(var(--yr-switch-padding) / 2);
   background-color: var(--yr-c-bg-opaque);
   -webkit-transition: .4s;
   transition: .4s;
@@ -55,14 +65,14 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(18px);
-  -ms-transform: translateX(18px);
-  transform: translateX(18px);
+  -webkit-transform: translateX(var(--yr-slider-on));
+  -ms-transform: translateX(var(--yr-slider-on));
+  transform: translateX(var(--yr-slider-on));
 }
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 22px;
+  border-radius: var(--yr-slider-height);
 }
 
 .slider.round:before {
