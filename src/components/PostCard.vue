@@ -4,56 +4,27 @@ const props = defineProps({
   tag: String,
   date: Date,
   title: String,
-  excerpt: String,
+  brief: String,
 })
 const dateFormat = { year: 'numeric', month: 'long', day: 'numeric' };
 </script>
 
 <template>
-  <article class="post-card">
-    <div>
-      <router-link class="post-card-link" :to="props.link">
-        <header class="post-card-header">
-          <div class="post-card-info">
-            <div class="post-card-tag">{{ props.tag }}</div>
-            <div class="post-card-date">{{ props.date.toLocaleDateString("en-US", dateFormat) }}</div>
-          </div>
-          <h2 class="post-card-title">{{ props.title }}</h2>
-        </header>
-        <section class="post-card-excerpt">{{ props.excerpt }}</section>
-      </router-link>
-    </div>
+  <article>
+    <router-link class="YRCardLink" :to="props.link">
+      <div class="YRCardMeta post-card-meta">
+        <span class="YRCardMeta">{{ props.tag }}</span>
+        <span class="YRCardMeta">{{ props.date.toLocaleDateString("en-US", dateFormat) }}</span>
+      </div>
+      <h2 class="YRCardTitle">{{ props.title }}</h2>
+      <section class="YRCardBrief">{{ props.brief }}</section>
+    </router-link>
   </article>
 </template>
 
 <style scoped>
-.post-card-link {
-  text-decoration: none;
-}
-.post-card-info, .post-card-excerpt {
-  color: var(--yr-c-text-pale);
-}
-.post-card-info {
+.post-card-meta {
   display: flex;
   justify-content: space-between;
-}
-.post-card-title {
-  margin-block-start: 0;
-  margin-block-end: 0.2em;
-  color: var(--yr-c-text);
-}
-.post-card-title:hover {
-  color: var(--yr-c-brand);
-  /* transition: color .25s; */
-}
-a:hover,
-a.router-link-active,
-a.router-link-exact-active {
-  cursor: pointer;
-}
-@media (max-width: 767px) {
-  .post-card-date {
-    display: none;
-  }
 }
 </style>

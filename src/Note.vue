@@ -22,7 +22,7 @@ pclist.sort((l, r) => {
 <template>
   <SiteTitle title="note" brief="coffee or tea"></SiteTitle>
   <div class="post-card-list">
-    <PostCard v-for="pc in pclist" :link="pc.link" :tag="pc.tag" :date="pc.date" :title="pc.title" :excerpt="pc.excerpt"></PostCard>
+    <PostCard v-for="pc in pclist" :link="pc.link" :tag="pc.tag" :date="pc.date" :title="pc.title" :brief="pc.brief"></PostCard>
   </div>
 </template>
 

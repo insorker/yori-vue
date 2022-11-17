@@ -1,1 +1,112 @@
 @import './base.css';
+
+/* app */
+.YRAppHeader {
+  width: 100%;
+  position: fixed;
+  z-index: var(--yr-z-index-nav);
+}
+
+.YRAppContent {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-top: var(--yr-header-height);
+  z-index: var(--yr-z-index-content);
+}
+
+@media (max-width: 767px) {
+  .YRContent {
+    padding: 15px;
+  }
+}
+
+/* nav */
+.YRNavBar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--yr-header-height);
+  padding: 0 15%;
+  background-color: var(--yr-c-bg-opaque);
+  border-bottom: 1px solid var(--yr-c-divider);
+}
+
+.YRNavLinks {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+a.YRNavLink {
+  padding: 0 1rem;
+  color: var(--yr-c-text);
+  white-space: nowrap;
+  text-decoration:none;
+}
+
+a.YRNavLink:hover {
+  color: var(--yr-c-brand);
+}
+
+a.YRNavLink:hover,
+a.YRNavLink.router-link-active,
+a.YRNavLink.router-link-exact-active {
+  cursor: pointer;
+}
+
+/* *-switch */
+
+/* *-title */
+.YRTitleHeader {
+  margin: var(--yr-title-margin) auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  word-wrap:break-word;
+}
+
+.YRTitleName {
+  font-size: var(--yr-title-size-big);
+  /* considering <h> */
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  color: var(--yr-c-text);
+}
+
+.YRTitleBrief {
+  font-size: var(--yr-title-size-small);
+  color: var(--yr-c-text-pale);
+}
+
+/* *-card */
+.YRCardLink {
+  text-decoration: none;
+}
+
+a.YRCardLink:hover,
+a.YRCardLink.router-link-active,
+a.YRCardLink.router-link-exact-active {
+  cursor: pointer;
+}
+
+.YRCardTitle {
+  /* considering <h> */
+  margin-block-start: 0;
+  margin-block-end: 0.2em;
+  color: var(--yr-c-text);
+}
+
+.YRCardMeta {
+  color: var(--yr-c-text-pale);
+}
+
+.YRCardTitle:hover {
+  color: var(--yr-c-brand);
+}
+
+.YRCardBrief {
+  color: var(--yr-c-text-pale);
+}

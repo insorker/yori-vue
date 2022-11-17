@@ -7,18 +7,22 @@ body {
 }
 
 :root {
-  --yr-c-title-size: 4rem;
+  --yr-header-height: 50px;
   --yr-nav-padding: 20px;
-  --yr-nav-height: 50px;
+  --yr-title-margin: 30px;
+  --yr-title-size-big: 4rem;
+  --yr-title-size-small: 1rem;
   --yr-z-index-nav: 20;
+  --yr-z-index-content: 10;
 }
 
 :root {
   --yr-c-bg: var(--yr-c-white);
+  --yr-c-bg-pale: var(--yr-c-grey-2);
   --yr-c-bg-opaque: var(--yr-c-white-opaque);
   --yr-c-text: var(--yr-c-black);
   --yr-c-text-inverse: var(--yr-c-white);
-  --yr-c-text-pale: var(--yr-c-grey);
+  --yr-c-text-pale: var(--yr-c-grey-1);
   --yr-c-divider: var(--yr-c-black-opaque);
   --yr-c-brand: var(--yr-c-orange-light);
 }
@@ -26,7 +30,8 @@ body {
 :root {
   --yr-c-black: #000000;
   --yr-c-black-opaque: #00000069;
-  --yr-c-grey: #ccc;
+  --yr-c-grey-1: #ccc;
+  --yr-c-grey-2: #eee;
   --yr-c-white: #ffffff;
   --yr-c-white-opaque: #ffffffb3;
   --yr-c-orange-light: #f58f54;

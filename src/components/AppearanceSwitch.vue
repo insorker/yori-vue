@@ -29,7 +29,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--yr-c-bg-pale);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -41,7 +41,7 @@
   width: 18px;
   left: 2px;
   bottom: 2px;
-  background-color: white;
+  background-color: var(--yr-c-bg-opaque);
   -webkit-transition: .4s;
   transition: .4s;
 }
