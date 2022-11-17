@@ -2,33 +2,35 @@
 import fm from 'front-matter'
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js/lib/common';
-import { useRoute } from 'vue-router'
+import { createWebHistory, useRoute } from 'vue-router'
 import PostTitle from './components/PostTitle.vue';
+import { assert } from '@vue/compiler-core';
 
 const modules = import.meta.glob('../docs/**/*.md', { as: 'raw', eager: true })
 const router = useRoute()
-const pathNote = '../docs/note/' + router.params.name + '.md'
-const pathStudy = '../docs/study/' + router.params.name + '.md'
-var path;
-if (pathNote in modules)
-  path = pathNote
-else if (pathStudy in modules)
-  path = pathStudy
+const pathPrefix = [ '../docs/note/', '../docs/study/' ]
 
-var file = fm(modules[path])
-var md = new MarkdownIt({
+var path;
+for (let idx in pathPrefix) {
+  path = pathPrefix[idx] + router.params.name + '.md'
+  if (path in modules)
+    break;
+}
+if (!(path in modules))
+  assert('path error')
+
+const file = fm(modules[path])
+const md = new MarkdownIt({
   highlight: function (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
         return hljs.highlight(str, { language: lang }).value;
       } catch (__) {}
     }
-
     return '';
   }
 })
-
-var content = {
+const content = {
   title: file.attributes.title,
   date: file.attributes.date,
   body: md.render(file.body),
@@ -44,7 +46,7 @@ var content = {
 
 <style scoped>
 .markdown {
-  padding-bottom: var(--yr-nav-height);
+  padding-bottom: var(--yr-header-height);
 }
 .markdown-body {
   box-sizing: border-box;

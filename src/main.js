@@ -15,8 +15,8 @@ const routes = [
   { path: '/', component: Home },
   { path: '/home', component: Home },
   { path: '/note/', component: Note },
+  { path: '/study/', component: Study },
   { path: '/post/:name', component: Post },
-  { path: '/study/:tag?', component: Study },
   { path: '/tic80', component: TIC80 },
 ]
 

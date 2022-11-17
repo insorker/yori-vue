@@ -16,7 +16,7 @@ const dateFormat = { year: 'numeric', month: 'long', day: 'numeric' };
         <span class="YRCardMeta">{{ props.tag }}</span>
         <span class="YRCardMeta">{{ props.date.toLocaleDateString("en-US", dateFormat) }}</span>
       </div>
-      <h2 class="YRCardTitle">{{ props.title }}</h2>
+      <h1 class="YRCardTitle">{{ props.title }}</h1>
       <section class="YRCardBrief">{{ props.brief }}</section>
     </router-link>
   </article>

@@ -1,20 +1,30 @@
 <script setup>
+import { ref } from 'vue'
+const emit = defineEmits(['tagChange'])
 const props = defineProps({
   tagList: Array,
-  tagTarget: String,
+  tagDefault: String,
 })
-function isTagTarget(tag) {
-  return tag == props.tagTarget
+const tagSelected = ref(props.tagDefault)
+
+function tagSelect(tag) {
+  if (tagSelected.value != tag) {
+    emit('tagChange', tag)
+    tagSelected.value = tag
+  }
+}
+function isTagSelected(tag) {
+  return tag == tagSelected.value
 }
 </script>
 
 <template>
   <div class="tag-list">
-    <div class="tag-item" v-for="tag in props.tagList">
-      <router-link class="tag-target" :tag-target="isTagTarget(tag)" :to="`/study/${tag}`">{{ tag }}</router-link>
+    <div class="tag-item" v-for="tag in tagList" :select="isTagSelected(tag)" @click="tagSelect(tag)">
+      {{ tag }}
     </div>
   </div>
-  <div class="divider">Total: {{ props.tagList.length }}</div>
+  <div class="tag-list-divider">Total: {{ props.tagList.length - 1 }}</div>
 </template>
 
 <style scoped>
@@ -24,42 +34,35 @@ function isTagTarget(tag) {
   align-items: center;
 }
 .tag-item {
-  padding: 0.5rem;
-}
-.divider {
-  font-size: 8px;
-  color: var(--yr-c-text-pale);
-  padding: 8px;
-  margin-bottom: 8px;
-  border-bottom: 1px solid var(--yr-c-divider);
-}
-a[tag-target=true] {
-  color: var(--yr-c-text-inverse);
-  background-color: var(--yr-c-brand);
-  border-radius: 0.25rem;
-  box-shadow: #00000029 0 2px 5px, #0000001f 0 2px 10px;
-}
-a[tag-target=true]:hover,
-a[tag-target=true].router-link-active,
-a[tag-target=true].router-link-exact-active {
-  cursor: pointer;
-}
-a[tag-target=true]:hover {
-  color: var(--yr-c-text);
-}
-
-a {
+  margin: 0.5rem;
   padding: 0.5rem;
   color: var(--yr-c-text);
   white-space: nowrap;
   text-decoration:none;
 }
-a:hover,
-a.router-link-active,
-a.router-link-exact-active {
-  cursor: pointer;
-}
-a:hover {
+.tag-item:hover {
   color: var(--yr-c-brand);
 }
+.tag-item:hover,
+.tag-item.router-link-active,
+.tag-item.router-link-exact-active {
+  cursor: pointer;
+}
+.tag-item[select=true] {
+  color: var(--yr-c-text-inverse);
+  background-color: var(--yr-c-brand);
+  border-radius: 0.25rem;
+  box-shadow: #00000029 0 2px 5px, #0000001f 0 2px 10px;
+}
+.tag-item[select=true]:hover {
+  color: var(--yr-c-text);
+}
+.tag-list-divider {
+  font-size: 0.1rem;
+  color: var(--yr-c-text-pale);
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--yr-c-divider);
+}
+
 </style>
