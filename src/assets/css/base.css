@@ -3,10 +3,11 @@ body {
   color: #333;
   line-height: 1.5;
   font-size: 16px;
-  font-family: sans-serif, "Georgia", "PingFang SC", "Microsoft YaHei";
+  font-family: "DM Mono", "ZCOOL KuaiLe", monospace, sans-serif, "Microsoft YaHei";
 }
 
 :root {
+  --yr-c-title-size: 4rem;
   --yr-nav-padding: 20px;
   --yr-nav-height: 50px;
   --yr-z-index-nav: 20;
@@ -16,6 +17,7 @@ body {
   --yr-c-bg: var(--yr-c-white);
   --yr-c-bg-opaque: var(--yr-c-white-opaque);
   --yr-c-text: var(--yr-c-black);
+  --yr-c-text-inverse: var(--yr-c-white);
   --yr-c-text-pale: var(--yr-c-grey);
   --yr-c-divider: var(--yr-c-black-opaque);
   --yr-c-brand: var(--yr-c-orange-light);

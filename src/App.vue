@@ -19,7 +19,12 @@ import Navigation from './Navigation.vue';
 }
 .YRContent {
   padding-top: var(--yr-nav-height);
-  max-width: 640px;
+  max-width: 720px;
   margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .YRContent {
+    padding: 15px;
+  }
 }
 </style>

@@ -40,9 +40,9 @@ const navItems = ref([
   display: flex;
   flex-grow: 1;
   justify-content: flex-end;
+  align-items: center;
 }
 a {
-  align-items: center;
   padding: 0 12px;
   color: var(--yr-c-text);
   white-space: nowrap;

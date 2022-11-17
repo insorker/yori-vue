@@ -19,8 +19,11 @@ const props = defineProps({
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  word-wrap:break-word;
 }
 .site-title {
+  font-size: var(--yr-c-title-size);
+  margin-block-start: 0em;
   margin-block-end: 0em;
   color: var(--yr-c-text);
 }
