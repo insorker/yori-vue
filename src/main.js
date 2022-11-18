@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
+import { createHead } from "@unhead/vue"
 import App from './App.vue'
 import Home from './Home.vue'
 import Note from './Note.vue'
@@ -7,8 +8,6 @@ import Study from './Study.vue'
 import TIC80 from './TIC80.vue'
 import Post from './Post.vue'
 
-import 'github-markdown-css/github-markdown.css'
-import 'highlight.js/styles/github.css'
 import './assets/css/main.css'
 
 const routes = [
@@ -24,7 +23,9 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes,
 })
+const head = createHead()
 
 const app = createApp(App)
 app.use(router)
+app.use(head)
 app.mount('#app')

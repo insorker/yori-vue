@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import AppearanceSwich from './components/AppearanceSwitch.vue'
+import ThemeSwitch from './components/ThemeSwitch.vue'
 
 const navLinks = ref([
   { name: 'Home', link: '/home', },
@@ -8,9 +8,6 @@ const navLinks = ref([
   { name: 'Study', link: '/study' },
   { name: 'TIC80', link: '/tic80', },
 ])
-function backgroundChange(checked) {
-  /* bg */
-}
 </script>
 
 <template>
@@ -20,7 +17,6 @@ function backgroundChange(checked) {
     <div class="YRNavLinks">
       <router-link class="YRNavLink" v-for="link in navLinks" :to="link.link">{{ link.name }}</router-link>
     </div>
-    <AppearanceSwich @checked="(checked) => backgroundChange(checked)">
-    </AppearanceSwich>
+    <ThemeSwitch></ThemeSwitch>
   </div>
 </template>

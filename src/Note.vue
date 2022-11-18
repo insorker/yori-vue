@@ -27,10 +27,3 @@ postCardList.sort((l, r) => {
     </div>
   </div>
 </template>
-
-<style scoped>
-.post-card-list {
-  display: grid;
-  gap: 3.5rem;
-}
-</style>

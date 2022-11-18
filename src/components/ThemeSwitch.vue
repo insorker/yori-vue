@@ -1,10 +1,41 @@
 <script setup>
+/* theme switch */
 import { ref, watch } from 'vue';
+import { useHead } from '@unhead/vue'
 
-const emit = defineEmits(['checked'])
-const checked = ref(true)
+const theme = {
+  light: {
+    attr_theme: 'light',
+    link_md: new URL('github-markdown-css/github-markdown.css', import.meta.url).href,
+    link_code: new URL('highlight.js/styles/github.css', import.meta.url).href,
+  },
+  dark: {
+    attr_theme: 'dark',
+    link_md: new URL('github-markdown-css/github-markdown-dark.css', import.meta.url).href,
+    link_code: new URL('highlight.js/styles/github-dark.css', import.meta.url).href,
+  }
+}
+const checked = ref(false)
 watch(checked, () => {
-  emit('checked', checked)
+  const option = checked.value ? 'dark' : 'light'
+
+  useHead({
+    htmlAttrs: {
+      theme: theme[option].attr_theme,
+    },
+    link: [
+      {
+        rel: "stylesheet",
+        id: "link-md",
+        href: theme[option].link_md,
+      },
+      {
+        rel: "stylesheet",
+        id: "link-code",
+        href: theme[option].link_code,
+      }
+    ]
+  })
 })
 </script>
 

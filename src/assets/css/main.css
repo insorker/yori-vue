@@ -82,6 +82,10 @@ a.YRNavLink.router-link-exact-active {
 }
 
 /* *-card */
+.YRCard {
+  margin: 1rem auto;
+}
+
 .YRCardLink {
   text-decoration: none;
 }

@@ -10,7 +10,7 @@ const dateFormat = { year: 'numeric', month: 'long', day: 'numeric' };
 </script>
 
 <template>
-  <article>
+  <article class="YRCard post-card">
     <router-link class="YRCardLink" :to="props.link">
       <div class="YRCardMeta post-card-meta">
         <span class="YRCardMeta">{{ props.tag }}</span>
@@ -23,6 +23,9 @@ const dateFormat = { year: 'numeric', month: 'long', day: 'numeric' };
 </template>
 
 <style scoped>
+.post-card {
+  margin: 4rem auto;
+}
 .post-card-meta {
   display: flex;
   justify-content: space-between;

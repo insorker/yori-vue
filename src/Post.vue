@@ -2,7 +2,7 @@
 import fm from 'front-matter'
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js/lib/common';
-import { createWebHistory, useRoute } from 'vue-router'
+import { useRoute } from 'vue-router'
 import PostTitle from './components/PostTitle.vue';
 import { assert } from '@vue/compiler-core';
 
@@ -49,6 +49,7 @@ const content = {
   padding-bottom: var(--yr-header-height);
 }
 .markdown-body {
+  background-color: var(--yr-c-bg);
   box-sizing: border-box;
   min-width: 200px;
   max-width: 980px;
