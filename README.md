@@ -1,29 +1,19 @@
 # yori-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-## Recommended IDE Setup
+## Contribute
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### Documents
 
-## Customize configuration
+[vue](https://cn.vuejs.org/)
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+[vite](https://vitejs.cn/vite3-cn/)
 
-## Project Setup
+[vue-router](https://router.vuejs.org/zh/)
 
-```sh
-npm install
-```
+[unhead](https://unhead.harlanzw.com/)
 
-### Compile and Hot-Reload for Development
+### Tech Blog
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+about [commitizen](https://www.jianshu.com/p/bd712e42f2e9)

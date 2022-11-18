@@ -8,13 +8,13 @@ import PostCardBrief from './components/PostCardBrief.vue'
 const modules = import.meta.glob('../docs/study/**/*.md', { as: 'raw', eager: true })
 const tagSelected = ref('All')
 
-var tagList = [tagSelected.value]
+var tagList = new Set([tagSelected.value])
 var postCardList = []
 for (const path in modules) {
   let attr = fm(modules[path]).attributes
   attr['link'] = '/post/' + path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'))
   postCardList.push(attr)
-  tagList.push(attr['tag'])
+  tagList.add(attr['tag'])
 }
 postCardList.sort((l, r) => {
   if (l.top == true && r.top != true) return true

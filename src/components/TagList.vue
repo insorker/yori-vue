@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 const emit = defineEmits(['tagChange'])
 const props = defineProps({
-  tagList: Array,
+  tagList: Set,
   tagDefault: String,
 })
 const tagSelected = ref(props.tagDefault)
@@ -24,7 +24,7 @@ function isTagSelected(tag) {
       {{ tag }}
     </div>
   </div>
-  <div class="tag-list-divider">Total: {{ props.tagList.length - 1 }}</div>
+  <div class="tag-list-divider">Total: {{ props.tagList.size - 1 }}</div>
 </template>
 
 <style scoped>
