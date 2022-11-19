@@ -2,26 +2,14 @@
 import fm from 'front-matter'
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js/lib/common';
+import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import PostTitle from './components/PostTitle.vue';
-import { assert } from '@vue/compiler-core';
 import MathJaxInit from './assets/js/mathjax'
 import Giscus from '@giscus/vue';
 
-const modules = import.meta.glob('../docs/**/*.md', { as: 'raw', eager: true })
+const modules = import.meta.glob('../docs/**/*.md', { as: 'raw' })
 const router = useRoute()
-const pathPrefix = [ '../docs/note/', '../docs/study/' ]
-
-var path;
-for (let idx in pathPrefix) {
-  path = pathPrefix[idx] + router.params.name + '.md'
-  if (path in modules)
-    break;
-}
-if (!(path in modules))
-  assert('path error')
-
-const file = fm(modules[path])
 const md = new MarkdownIt({
   highlight: function (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
@@ -32,17 +20,30 @@ const md = new MarkdownIt({
     return '';
   }
 })
-const content = {
-  title: file.attributes.title,
-  date: file.attributes.date,
-  body: md.render(file.body),
+const content = ref({})
+
+for (const path in modules) {
+  const name = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'))
+
+  if (name == router.params.name) {
+    modules[path]().then((mod) => {
+      const file = fm(mod);
+      
+      content.value = {
+        title: file.attributes.title,
+        date: file.attributes.date,
+        body: md.render(file.body),
+      }
+    })
+    break;
+  }
 }
 
 MathJaxInit()
 </script>
 
 <template>
-  <div class="markdown">
+  <div class="markdown" v-if="content != {}">
     <PostTitle :title="content.title" :date="content.date"></PostTitle>
     <article class="markdown-body" v-html="content.body"></article>
   </div>
