@@ -16,7 +16,10 @@ const theme = {
   }
 }
 const checked = ref(false)
-watch(checked, () => {
+themeSwitch()
+watch(checked, themeSwitch)
+
+function themeSwitch() {
   const option = checked.value ? 'dark' : 'light'
 
   useHead({
@@ -36,7 +39,7 @@ watch(checked, () => {
       }
     ]
   })
-})
+}
 </script>
 
 <template>
