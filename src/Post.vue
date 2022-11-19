@@ -47,7 +47,20 @@ MathJaxInit()
     <PostTitle :title="content.title" :date="content.date"></PostTitle>
     <article class="markdown-body" v-html="content.body"></article>
   </div>
-  <Giscus></Giscus>
+  <Giscus
+  repo="insorker/insorker.github.io"
+        repo-id="MDEwOlJlcG9zaXRvcnkzMDI5NTUyMjU="
+        category="Announcements"
+        category-id="DIC_kwDOEg662c4CSpKy"
+        mapping="url"
+        strict="0"
+        reactions-enabled="1"
+        emit-metadata="0"
+        input-position="top"
+        theme="preferred_color_scheme"
+        lang="zh-CN"
+        loading="lazy"
+        crossorigin="anonymous"></Giscus>
 </template>
 
 <style scoped>

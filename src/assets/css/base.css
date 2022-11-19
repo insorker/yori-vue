@@ -4,6 +4,7 @@ body {
   font-size: var(--yr-font-size);
   font-family: var(--yr-font-family);
   transition: background-color .4s;
+  padding-bottom: var(--yr-header-height);
 }
 
 :root {
