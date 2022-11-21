@@ -56,9 +56,9 @@ a.YRNavLink.router-link-exact-active {
   cursor: pointer;
 }
 
-/* *-switch */
+/* _-switch */
 
-/* *-title */
+/* _-title */
 .YRTitleHeader {
   margin: var(--yr-title-margin) auto;
   display: flex;
@@ -81,7 +81,7 @@ a.YRNavLink.router-link-exact-active {
   color: var(--yr-c-text-pale);
 }
 
-/* *-card */
+/* _-card */
 .YRCard {
   margin: 1rem auto;
 }
@@ -104,7 +104,14 @@ a.YRCardLink.router-link-exact-active {
 }
 
 .YRCardMeta {
+  padding: 0 1rem 0 0;
   color: var(--yr-c-text-pale);
+}
+
+.YRCardTags {
+  display: flex;
+  justify-content: left;
+  flex-grow: 0;
 }
 
 .YRCardTitle:hover {

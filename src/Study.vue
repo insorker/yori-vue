@@ -14,7 +14,13 @@ for (const path in modules) {
   let attr = fm(modules[path]).attributes
   attr['link'] = '/post/' + path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'))
   postCardList.push(attr)
-  tagList.add(attr['tag'])
+  if (typeof(attr['tags']) == 'string')
+    throw path + ". Format of 'tags' should be yaml array. "
+  else {
+    for (let tag of attr['tags']) {
+      tagList.add(tag)
+    }
+  }
 }
 postCardList.sort((l, r) => {
   if (l.top == true && r.top != true) return true
@@ -28,7 +34,7 @@ postCardList.sort((l, r) => {
   <TagList :tagList="tagList" :tagDefault="tagSelected" @tagChange="(tag) => tagSelected = tag"></TagList>
   <div class="post-card-list">
     <div v-for="pc in postCardList">
-      <PostCardBrief v-if="tagSelected == 'All' || pc.tag == tagSelected" :link="pc.link" :title="pc.title" :date="pc.date"></PostCardBrief>
+      <PostCardBrief v-if="tagSelected == 'All' || pc.tags.includes(tagSelected)" :link="pc.link" :title="pc.title" :date="pc.date"></PostCardBrief>
     </div>
   </div>
 </template>

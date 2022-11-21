@@ -1,7 +1,7 @@
 <script setup>
 const props = defineProps({
   link: String,
-  tag: String,
+  tags: Array,
   date: Date,
   title: String,
   brief: String,
@@ -12,8 +12,10 @@ const dateFormat = { year: 'numeric', month: 'long', day: 'numeric' };
 <template>
   <article class="YRCard post-card">
     <router-link class="YRCardLink" :to="props.link">
-      <div class="YRCardMeta post-card-meta">
-        <span class="YRCardMeta">{{ props.tag }}</span>
+      <div class="post-card-meta">
+        <span class="YRCardTags">
+          <span class="YRCardMeta" v-for="tag in props.tags">{{ tag }}</span>
+        </span>
         <span class="YRCardMeta">{{ props.date.toLocaleDateString("en-US", dateFormat) }}</span>
       </div>
       <h1 class="YRCardTitle">{{ props.title }}</h1>
