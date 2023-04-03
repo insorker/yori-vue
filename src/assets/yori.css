@@ -1,0 +1,47 @@
+@import './base.css';
+
+a {
+  color: inherit;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.yr-fs-1 {
+  font-size: var(--yr-font-size-h1);
+  font-weight: bold;
+}
+
+.yr-fs-2 {
+  font-size: var(--yr-font-size-h2);
+  font-weight: 600;
+}
+
+.yr-fs-3 {
+  font-size: var(--yr-font-size-h3);
+}
+
+.yr-flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--yr-v-gap);
+}
+
+.yr-gap-0 {
+  --yr-v-gap: 160px;
+}
+
+.yr-gap-1 {
+  --yr-v-gap: var(--yr-font-size-h1);
+}
+
+.yr-gap-2 {
+  --yr-v-gap: var(--yr-font-size-h2);
+}
+
+.yr-gap-3 {
+  --yr-v-gap: var(--yr-font-size-h3);
+}
