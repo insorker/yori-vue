@@ -10,6 +10,13 @@ a:hover {
   cursor: pointer;
 }
 
+.yr-flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--yr-v-gap);
+}
+
 .yr-fs-1 {
   font-size: var(--yr-font-size-h1);
   font-weight: bold;
@@ -22,12 +29,6 @@ a:hover {
 
 .yr-fs-3 {
   font-size: var(--yr-font-size-h3);
-}
-
-.yr-flex-column {
-  display: flex;
-  flex-direction: column;
-  gap: var(--yr-v-gap);
 }
 
 .yr-gap-0 {
@@ -44,4 +45,12 @@ a:hover {
 
 .yr-gap-3 {
   --yr-v-gap: var(--yr-font-size-h3);
+}
+
+.yr-gap-4 {
+  --yr-v-gap: var(--yr-font-size);
+}
+
+.yr-gap-null {
+  --yr-v-gap: 0px;
 }
