@@ -20,8 +20,7 @@ a {
 }
 a:hover {
   color: var(--color-text-reverse);
-  background-color: var(--color-background-reverse);
-  
+  background-color: var(--color-brand);
 }
 .social-link {
   display: flex;

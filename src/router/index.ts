@@ -10,7 +10,7 @@ const router = createRouter({
     },
     {
       path: '/',
-      name: 'template',
+      name: 'page',
       component: () => import('@/views/PageView.vue'),
       children: [
         {

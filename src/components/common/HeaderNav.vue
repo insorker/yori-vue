@@ -6,17 +6,18 @@ defineProps<{
 </script>
 
 <template>
-  <RouterLink class="nav-item yr-fs-3" :to="path">{{ name }}</RouterLink>
+  <RouterLink class="header-nav yr-fs-3" :to="path">{{ name }}</RouterLink>
 </template>
 
 <style scoped>
-.nav-item {
+.header-nav {
   color: inherit;
   padding: var(--yr-font-size);
   white-space: nowrap;
   text-decoration: none;
+  transition: color 0.5s, background-color 0.5s;
 }
-.nav-item:hover {
+.header-nav:hover {
   color: var(--color-brand);
   cursor: pointer;
 }
