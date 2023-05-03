@@ -7,6 +7,7 @@ import Markdown from 'vite-plugin-md'
 import fs from 'fs'
 import { resolve } from "path"
 import matter from "gray-matter"
+import { parse, stringify } from 'yaml'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -26,11 +27,13 @@ export default defineConfig({
         if (path == 'note') {
           const file = resolve(__dirname, `docs/${path}/${name}.md`)
           const content = fs.readFileSync(file, "utf-8")
-          const { data } = matter(content)
+          const { data } = matter(content, {
+            engines: { yaml: { parse, stringify, }, },
+          })
 
           return {
             ...route,
-            yaml: data
+            meta: data
           }
         }
 

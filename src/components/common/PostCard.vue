@@ -1,17 +1,15 @@
 <script setup lang="ts">
-import type { PostCardModel } from '@/models/PostCard'
-
 defineProps<{
   to: string
-  card: PostCardModel
+  meta: any
 }>()
 </script>
 
 <template>
   <RouterLink :to="to" class="post-card yr-flex-column yr-gap-null">
-    <div class="post-card__date">{{ card.date }}</div>
-    <div class="post-card__title yr-fs-2">{{ card.title }}</div>
-    <div class="post-card__brief">{{ card.brief }}</div>
+    <div class="post-card__date">{{ meta.date }}</div>
+    <div class="post-card__title yr-fs-2">{{ meta.title }}</div>
+    <div class="post-card__brief">{{ meta.brief }}</div>
   </RouterLink>
 </template>
 
