@@ -4,7 +4,7 @@ import TheFooter from '@/components/common/TheFooter.vue';
 </script>
 
 <template>
-  <div class="page">
+  <div class="page yr-flex-column yr-gap-null">
     <TheHeader />
     <RouterView class="page__content" />
     <div class="page__spacer"></div>
@@ -14,8 +14,6 @@ import TheFooter from '@/components/common/TheFooter.vue';
 
 <style scoped>
 .page {
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
 }
 .page__content {

@@ -8,9 +8,9 @@ import HeaderNav from './HeaderNav.vue';
       <HeaderNav name="Insorker" path="/" />
     </nav>
     <nav class="header__nav-right">
-      <HeaderNav name="Project" path="project" />
-      <HeaderNav name="Note" path="note" />
-      <HeaderNav name="About" path="about" />
+      <HeaderNav name="Project" path="/project" />
+      <HeaderNav name="Note" path="/note" />
+      <HeaderNav name="About" path="/about" />
     </nav>
   </header>
 </template>

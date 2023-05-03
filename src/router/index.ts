@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import VPRoutes from '~pages'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,25 +12,31 @@ const router = createRouter({
     {
       path: '/',
       name: 'page',
-      component: () => import('@/views/PageView.vue'),
+      component: () => import('@/views/LayoutView.vue'),
       children: [
         {
-          path: '/project',
+          path: 'project',
           name: 'project',
           component: () => import('@/views/ProjectView.vue')
         },
         {
-          path: '/note',
+          path: 'note',
           name: 'note',
           component: () => import('@/views/NoteView.vue')
         },
         {
-          path: '/about',
+          path: 'about',
           name: 'about',
           component: () => import('@/views/AboutView.vue')
+        },
+        {
+          path: '/',
+          name: 'post',
+          component: () => import('@/views/PostView.vue'),
+          children: VPRoutes
         }
       ]
-    },
+    }
   ]
 })
 
