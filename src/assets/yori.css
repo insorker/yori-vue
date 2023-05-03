@@ -54,3 +54,8 @@ a:hover {
 .yr-gap-null {
   --yr-v-gap: 0px;
 }
+
+.yr-content-wrapper {
+  width: 100%;
+  max-width: var(--yr-content-width);
+}
