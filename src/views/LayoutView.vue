@@ -4,21 +4,24 @@ import TheFooter from '@/components/common/TheFooter.vue';
 </script>
 
 <template>
-  <div class="flex-box">
-    <TheHeader class="header" />
-    <RouterView class="content" />
-    <div class="spacer"></div>
-    <TheFooter class="footer" />
+  <div class="page">
+    <TheHeader />
+    <RouterView class="page__content" />
+    <div class="page__spacer"></div>
+    <TheFooter />
   </div>
 </template>
 
 <style scoped>
-.flex-box {
+.page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-.spacer {
+.page__content {
+  padding: 0 var(--yr-padding);
+}
+.page__spacer {
   flex: 1;
 }
 </style>

@@ -9,7 +9,7 @@ let id = 0;
 const title = ref("Insorker")
 const brief = ref([
   { id: id++, text: "Hi, this is insorker, a student who likes programming." },
-  { id: id++, text: "Besides, I like go, origami, pixel art, harmonica, whistle...Just for enjoyment and not professional. Maybe we can play together." },
+  { id: id++, text: "Besides, I like video games, go, origami, pixel art, harmonica, whistle...Just for enjoyment and not professional. Maybe we can play together." },
   { id: id++, text: "Want to know more about me? Follow the links right below." },
 ])
 
