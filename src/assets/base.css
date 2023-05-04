@@ -15,14 +15,15 @@
   --yr-c-text-light: var(--yr-c-white);
   --yr-c-text-dark: var(--yr-c-black);
 
-  --yr-font-size-h1: 3rem;
+  --yr-font-size-h1: 3.25rem;
   --yr-font-size-h2: 2rem;
   --yr-font-size-h3: 1.25rem;
   --yr-font-size: 1rem;
   --yr-font-size-sm: 0.5rem;
 
   --yr-padding: 1rem;
-  --yr-content-width: 720px;
+  --yr-content-padding: 3rem;
+  --yr-content-width: 800px;
 }
 
 /* semantic color variables for this project */

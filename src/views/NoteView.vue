@@ -9,16 +9,18 @@ const { metaArray } = usePostMetaStore()
 <template>
   <ListLayout title="note">
     <template v-slot:content>
-      <div class="yr-content-wrapper yr-flex-column yr-gap-1">
+      <div class="note__content yr-content-wrapper yr-flex-column yr-gap-1">
         <PostCard v-for="item in metaArray" :to="item.path" :meta="item.meta" />
       </div>
     </template>
   </ListLayout>
-  <!-- <TheList title="note" direction="row">
-    <template v-slot:content>
-      <div class="yr-content-wrapper yr-flex-column yr-gap-1">
-        <PostCard v-for="item in metaArray" :to="item.path" :meta="item.meta" />
-      </div>
-    </template>
-  </TheList> -->
 </template>
+
+<style scoped>
+@media (min-width: 1024px) {
+  .note__content {
+    padding-left: 32px;
+    border-left: 1px solid var(--color-border);
+  }
+}
+</style>

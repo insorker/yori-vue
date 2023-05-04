@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import NotePlayground from '../note/NotePlayground.vue';
+
 defineProps<{
   title: string
 }>()
@@ -7,11 +9,16 @@ defineProps<{
 <template>
   <div class="list">
     <div class="list__spacer"></div>
-    <div class="list__header yr-flex-row yr-gap-2">
-      <img src="/avatar.png" alt="avatar" class="list__header-avatar">
-      <h1 class="yr-fs-1">{{ title }}</h1>
+    <div class="list__header yr-flex-column yr-gap-null">
+      <div class="list__title yr-flex-row yr-gap-2">
+        <img src="/avatar.png" alt="avatar" class="list__header-avatar">
+        <h1 class="yr-fs-1">{{ title }}</h1>
+      </div>
+      <div class="list__playground">
+        <NotePlayground />
+      </div>
     </div>
-    <slot name="content"/>
+    <slot name="content" class="list__content" />
   </div>
 </template>
 
@@ -27,8 +34,13 @@ defineProps<{
   --yr-v-gap: var(--yr-font-size-h1);
 }
 
-.list__header {
+.list__title {
   align-items: center;
+}
+
+.list__playground {
+  display: none;
+  max-width: 240px;
 }
 
 @media (min-width: 1024px) {
@@ -44,8 +56,18 @@ defineProps<{
     --yr-v-gap: 10vw;
   }
 
-  .list__header {
-    margin-top: 25vh;
+  .list__spacer {
+    display: none;
+  }
+
+  .list__playground {
+    display: block;
+    aspect-ratio : 1 / 1;
+    width: 100%;
+  }
+
+  .list__title {
+    margin-top: 5vh;
   }
 }
 

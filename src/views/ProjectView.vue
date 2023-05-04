@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <div>J</div>
+  <div></div>
 </template>

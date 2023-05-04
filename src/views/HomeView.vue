@@ -20,7 +20,7 @@ const brief = ref([
     <div class="home__bg">
       <img style="margin-left: 35vw;" src="/background.png">
     </div>
-    <div class="home__pane yr-flex-column">
+    <div class="home__pane yr-flex-column yr-gap-null">
       <div class="yr-flex-column yr-gap-1">
         <h1 class="home__pane-title yr-fs-1">{{ title }}</h1>
         <ul class="home__pane-brief yr-flex-column yr-gap-3">
@@ -85,5 +85,15 @@ ul, li {
 }
 .home__pane-social-link > * {
   margin-right: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .home__bg {
+    display: none;
+  }
+  .home__pane {
+    width: 100%;
+    justify-content: space-around;
+  }
 }
 </style>

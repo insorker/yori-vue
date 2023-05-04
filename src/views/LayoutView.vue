@@ -17,7 +17,7 @@ import TheFooter from '@/components/common/TheFooter.vue';
   min-height: 100vh;
 }
 .page__content {
-  padding: 0 var(--yr-padding);
+  padding: 0 var(--yr-content-padding);
 }
 .page__spacer {
   flex: 1;

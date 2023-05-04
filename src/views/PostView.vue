@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { usePostMetaStore } from '@/stores/PostMeta'
+import 'github-markdown-css'
 
 const route = useRoute()
 const { metaHash } = usePostMetaStore()
@@ -32,3 +33,18 @@ const meta = ref(metaHash[route.path])
   color: var(--color-text-soft);
 }
 </style>
+
+<!-- <style>
+.markdown-body {
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  padding: 16px;
+}
+
+@media (max-width: 767px) {
+  .markdown-body {
+    border-radius: 0px;
+    border: none;
+  }
+}
+</style> -->
