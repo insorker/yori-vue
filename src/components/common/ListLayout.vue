@@ -27,6 +27,10 @@ defineProps<{
   --yr-v-gap: var(--yr-font-size-h1);
 }
 
+.list__header {
+  align-items: center;
+}
+
 @media (min-width: 1024px) {
   .list {
     align-items: flex-start;
@@ -42,7 +46,6 @@ defineProps<{
 
   .list__header {
     margin-top: 25vh;
-    align-items: center;
   }
 }
 
