@@ -17,8 +17,9 @@
 
   --yr-font-size-h1: 3rem;
   --yr-font-size-h2: 2rem;
-  --yr-font-size-h3: 1.5rem;
+  --yr-font-size-h3: 1.25rem;
   --yr-font-size: 1rem;
+  --yr-font-size-sm: 0.5rem;
 
   --yr-padding: 1rem;
   --yr-content-width: 720px;

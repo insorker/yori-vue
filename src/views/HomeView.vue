@@ -18,7 +18,7 @@ const brief = ref([
 <template>
   <div class="home">
     <div class="home__bg">
-      <img style="margin-left: 35vw;" src="/default-bg-img.png">
+      <img style="margin-left: 35vw;" src="/background.png">
     </div>
     <div class="home__pane yr-flex-column">
       <div class="yr-flex-column yr-gap-1">
