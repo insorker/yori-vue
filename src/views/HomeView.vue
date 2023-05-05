@@ -1,17 +1,18 @@
 <script setup lang="ts">
-import SocialLink from '@/components/common/SocialLink.vue';
-import TheFooter from '@/components/common/TheFooter.vue';
-import NavLink from '@/components/home/NavLink.vue';
-import { ref } from 'vue';
+import { ref } from 'vue'
+import SocialLink from '@/components/common/SocialLink.vue'
+import TheFooter from '@/components/common/TheFooter.vue'
+import NavLink from '@/components/home/NavLink.vue'
+import self from '../../docs/home/self.json'
 
-let id = 0;
-
-const title = ref("Insorker")
-const brief = ref([
-  { id: id++, text: "Hi, this is insorker, a student who likes programming." },
-  { id: id++, text: "Besides, I like video games, go, origami, pixel art, harmonica, whistle...Just for enjoyment and not professional. Maybe we can play together." },
-  { id: id++, text: "Want to know more about me? Follow the links right below." },
-])
+const title = ref(self.name)
+const brief = ref<{ id: string, text: string }[]>([])
+for (let idx in self.brief) {
+  brief.value.push({
+    id: idx, text: self.brief[idx]
+  })
+}
+const social_link = ref(self['social-link'])
 
 </script>
 
@@ -28,8 +29,8 @@ const brief = ref([
             {{ sentence.text }}
           </li>
           <div class="home__pane-social-link">
-            <SocialLink icon="github" font="github" url="https://github.com/insorker"></SocialLink>
-            <SocialLink icon="bilibili" font="bilibili" url="https://space.bilibili.com/434618849"></SocialLink>
+            <SocialLink icon="github" font="github" :url="social_link.github"></SocialLink>
+            <SocialLink icon="bilibili" font="bilibili" :url="social_link.bilibili"></SocialLink>
             <!-- <SocialLink icon="zhihu" url="https://www.zhihu.com/people/zhu-xing-da-15"></SocialLink> -->
           </div>
         </ul>
