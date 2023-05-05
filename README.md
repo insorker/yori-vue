@@ -36,6 +36,10 @@ Git clone this repository and run `npm install`.
 
 Copy and rename the folder 'demo-docs' to 'docs' and perform all configurations here.
 
+Run `npm run dev` to test.
+
+Run `npm run build` to build.
+
 ### home
 
 > Write self-introduction in the file 'home/self.json'.
