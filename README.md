@@ -34,7 +34,7 @@ Git clone this repository and run `npm install`.
 
 ## Usage
 
-Rename the folder 'demo-docs' to 'docs' and perform all configurations here.
+Copy and rename the folder 'demo-docs' to 'docs' and perform all configurations here.
 
 ### home
 
