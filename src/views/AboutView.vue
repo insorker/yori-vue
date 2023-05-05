@@ -4,7 +4,8 @@ import UserCard from '@/components/common/UserCard.vue';
 
 <template>
   <div class="about">
-    <UserCard />
+    To be built ...
+    <!-- <UserCard /> -->
   </div>
 </template>
 

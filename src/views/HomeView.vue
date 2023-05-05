@@ -30,7 +30,7 @@ const brief = ref([
           <div class="home__pane-social-link">
             <SocialLink icon="github" font="github" url="https://github.com/insorker"></SocialLink>
             <SocialLink icon="bilibili" font="bilibili" url="https://space.bilibili.com/434618849"></SocialLink>
-            <SocialLink icon="zhihu" url="https://www.zhihu.com/people/zhu-xing-da-15"></SocialLink>
+            <!-- <SocialLink icon="zhihu" url="https://www.zhihu.com/people/zhu-xing-da-15"></SocialLink> -->
           </div>
         </ul>
         <div class="yr-flex-column yr-gap-4">
