@@ -2,13 +2,9 @@
 import { ref } from 'vue'
 import GhCard from '@/components/common/GhCard.vue'
 import AvatarHeader from '@/components/common/AvatarHeader.vue'
+import repo from '/docs/project/repo.txt?raw'
 
-const projects = ref([
-  'insorker/WD-40',
-  'insorker/yori-vue',
-  'insorker/FallingMagic',
-  // 'xdshell/xdsh'
-])
+const projects = ref(repo.split('\n'))
 </script>
 
 <template>
