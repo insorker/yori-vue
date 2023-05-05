@@ -16,6 +16,10 @@ A static blog generator, based on Vue, inherits from Yori.
   <a href="https://insorker.github.io/">Demo</a> | <a href="https://github.com/insorker/yori-vue#Install">Install</a> | <a href="https://github.com/insorker/yori-vue#Usage">Usage</a>
 </p>
 
+<p align="center">
+  <img width="75%" src="https://insorker-bucket.oss-cn-hangzhou.aliyuncs.com/img/blog/202305052330003.PNG" />
+</p>
+
 Another tiny static blog generator, Hahaha. The predecessor of the yori-vue project is [yori](https://github.com/insorker/yori), so their goals are aligned:
 
 <p align="center">
