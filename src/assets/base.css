@@ -79,4 +79,6 @@ body {
   font-size: var(--yr-font-size);
   background: var(--color-background);
   transition: color 0.5s, background-color 0.5s;
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/overflow */
+  overflow: overlay;
 }

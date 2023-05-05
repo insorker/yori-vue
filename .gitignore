@@ -30,3 +30,4 @@ coverage
 # demo docs
 docs/
 !docs/note/HelloWorld.md
+.vite-ssg-temp/
