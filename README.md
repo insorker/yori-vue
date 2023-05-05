@@ -38,7 +38,7 @@ Copy and rename the folder 'demo-docs' to 'docs' and perform all configurations 
 
 Run `npm run dev` to test.
 
-Run `npm run build` to build.
+Run `npm run build` to build. The output will be placed in the 'dist' folder.
 
 ### home
 
