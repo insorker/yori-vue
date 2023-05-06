@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import ListLayout from '@/components/common/ListLayout.vue';
 import PostCard from '@/components/common/PostCard.vue'
+import NotePlayground from '@/components/note/NotePlayground.vue'
 import { usePostMetaStore } from '@/stores/PostMeta'
 
 const { metaArray } = usePostMetaStore()
@@ -8,6 +9,9 @@ const { metaArray } = usePostMetaStore()
 
 <template>
   <ListLayout title="note">
+    <template v-slot:playground>
+      <NotePlayground />
+    </template>
     <template v-slot:content>
       <div class="note__content yr-content-wrapper yr-flex-column yr-gap-1">
         <PostCard v-for="item in metaArray" :to="item.path" :meta="item.meta" />

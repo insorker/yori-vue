@@ -14,7 +14,7 @@ const meta = ref(metaHash[route.path])
     <div class="yr-content-wrapper yr-flex-column yr-gap-1">
       <div class="post__spacer"></div>
       <div class="post__header yr-flex-column yr-gap-null">
-        <h1 class="post__title yr-fs-1">{{ meta.title }}</h1>
+        <h1 class="post__title yr-fs-2">{{ meta.title }}</h1>
         <div class="post__date">{{ meta.date }}</div>
       </div>
       <RouterView />

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import NotePlayground from '../note/NotePlayground.vue'
 import AvatarHeader from './AvatarHeader.vue'
 
 defineProps<{
@@ -12,7 +11,7 @@ defineProps<{
     <div class="list__spacer"></div>
     <div class="list__header yr-flex-column yr-gap-null">
       <AvatarHeader class="list__header-title" title="note" />
-      <NotePlayground class="list__header-playground"/>
+      <div class="list__header-playground"><slot name="playground" /></div>
     </div>
     <slot name="content" class="list__content" />
   </div>

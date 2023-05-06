@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import HeaderNav from './HeaderNav.vue';
+import HeaderNav from './HeaderNav.vue'
+import MenuDropdown from './MenuDropdown.vue'
 </script>
 
 <template>
@@ -8,9 +9,14 @@ import HeaderNav from './HeaderNav.vue';
       <HeaderNav name="Insorker" path="/" />
     </nav>
     <nav class="header__nav-right">
-      <HeaderNav name="Project" path="/project" />
-      <HeaderNav name="Note" path="/note" />
-      <HeaderNav name="About" path="/about" />
+      <HeaderNav class="header__nav-lg" name="Project" path="/project" />
+      <HeaderNav class="header__nav-lg" name="Note" path="/note" />
+      <HeaderNav class="header__nav-lg" name="About" path="/about" />
+      <MenuDropdown class="header__nav-sm">
+        <HeaderNav name="Project" path="/project" />
+        <HeaderNav name="Note" path="/note" />
+        <HeaderNav name="About" path="/about" />
+      </MenuDropdown>
     </nav>
   </header>
 </template>
@@ -29,5 +35,19 @@ import HeaderNav from './HeaderNav.vue';
   display: flex;
   justify-content: center;
   flex: 0 0 auto;
+}
+.header__nav-sm {
+  display: none;
+}
+.header__nav-lg {
+  display: block;
+}
+@media (max-width: 640px) {
+  .header__nav-sm {
+    display: block;
+  }
+  .header__nav-lg {
+    display: none;
+  }
 }
 </style>
