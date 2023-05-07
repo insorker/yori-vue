@@ -28,5 +28,4 @@ coverage
 *.sw?
 
 # demo docs
-docs/
 .vite-ssg-temp/
