@@ -13,7 +13,13 @@ for (let idx in self.brief) {
   })
 }
 const social_link = ref(self['social-link'])
-
+const switcher = ref(0)
+const switcherTrigger = () => {
+  switcher.value += 1
+  if (switcher.value > 1) {
+    switcher.value = 0
+  }
+}
 </script>
 
 <template>
@@ -41,6 +47,14 @@ const social_link = ref(self['social-link'])
         </div>
       </div>
       <TheFooter />
+      <div class="home__pane-switcher yr-flex-column yr-gap-4">
+        <div class="home__pane-switcher-item" @click="switcherTrigger"></div>
+      </div>
+    </div>
+    <div v-if="switcher == 1" class="home__playground yr-flex-column yr-gap-null">
+      <div class="xdsh">
+        To be built...
+      </div>
     </div>
   </div>
 </template>
@@ -48,6 +62,8 @@ const social_link = ref(self['social-link'])
 <style scoped>
 .home {
   position: relative;
+  display: flex;
+
 }
 ul, li {
   padding: 0;
@@ -66,6 +82,7 @@ ul, li {
   height: 100%;
 }
 .home__pane {
+  position: relative;
   width: 55%;
   min-height: 100vh;
   padding: 0px 10%;
@@ -87,6 +104,34 @@ ul, li {
 .home__pane-social-link > * {
   margin-right: 1rem;
 }
+.home__pane-switcher {
+  position: absolute;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  right: 16px;
+  bottom: 16px;
+}
+.home__pane-switcher-item {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+.home__pane-switcher-item:hover {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: solid 1px var(--color-border);
+  background-color: var(--color-brand);
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 15%);
+}
+.home__playground {
+  background-color: var(--color-background);
+  width: 45%;
+  min-height: 100vh;
+  align-items: center;
+}
 
 @media (max-width: 1024px) {
   .home__bg {
@@ -95,6 +140,9 @@ ul, li {
   .home__pane {
     width: 100%;
     justify-content: space-around;
+  }
+  .home__playground {
+    display: none;
   }
 }
 </style>
