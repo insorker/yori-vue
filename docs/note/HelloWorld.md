@@ -4,9 +4,9 @@ date: 2023-05-04
 brief: This is the FIRST 'Hello World'!
 ---
 
-# Hello World! This is yori-vue!
+# Hello World! This is yori-vue! 🎉🎉🎉
 
-Maybe I should say something...
+Adopted the GitHub Markdown style.
 
 ```c
 #include <stdio.h>

@@ -141,6 +141,9 @@ ul, li {
     width: 100%;
     justify-content: space-around;
   }
+  .home__pane-switcher {
+    display: none;
+  }
   .home__playground {
     display: none;
   }
