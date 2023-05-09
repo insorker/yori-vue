@@ -2,7 +2,9 @@
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { usePostMetaStore } from '@/stores/PostMeta'
+import Giscus from '@giscus/vue'
 import 'github-markdown-css'
+import 'highlight.js/styles/github.css'
 
 const route = useRoute()
 const { metaHash } = usePostMetaStore()
@@ -18,6 +20,21 @@ const meta = ref(metaHash[route.path])
         <div class="post__date">{{ meta.date }}</div>
       </div>
       <RouterView />
+      <Giscus
+        repo="insorker/insorker.github.io"
+        repo-id="MDEwOlJlcG9zaXRvcnkzMDI5NTUyMjU="
+        category="Announcements"
+        category-id="DIC_kwDOEg662c4CSpKy"
+        mapping="url"
+        strict="0"
+        reactions-enabled="1"
+        emit-metadata="0"
+        input-position="top"
+        theme="preferred_color_scheme"
+        lang="zh-CN"
+        loading="lazy"
+        crossorigin="anonymous">
+      </Giscus>
     </div>
   </div>
 </template>
@@ -33,18 +50,3 @@ const meta = ref(metaHash[route.path])
   color: var(--color-text-soft);
 }
 </style>
-
-<!-- <style>
-.markdown-body {
-  border-radius: 6px;
-  border: 1px solid var(--color-border);
-  padding: 16px;
-}
-
-@media (max-width: 767px) {
-  .markdown-body {
-    border-radius: 0px;
-    border: none;
-  }
-}
-</style> -->

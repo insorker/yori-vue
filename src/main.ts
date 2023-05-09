@@ -13,11 +13,3 @@ export const createApp = ViteSSG(
     app.use(pinia)
   },
 )
-
-// const app = createApp(App)
-// const pinia = createPinia()
-
-// app.use(router)
-// app.use(pinia)
-
-// app.mount('#app')

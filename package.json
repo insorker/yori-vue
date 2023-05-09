@@ -12,8 +12,10 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@giscus/vue": "^2.2.8",
     "github-markdown-css": "^5.2.0",
     "gray-matter": "^4.0.3",
+    "highlight.js": "^11.8.0",
     "markdown-it": "^13.0.1",
     "pinia": "^2.0.35",
     "vue": "^3.2.47",

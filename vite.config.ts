@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import Markdown from 'vite-plugin-md'
+import hljs from 'highlight.js/lib/common'
 import fs from 'fs'
 import { resolve } from "path"
 import matter from "gray-matter"
@@ -40,7 +41,22 @@ export default defineConfig({
         return route
       }
     }),
-    Markdown()
+    Markdown({
+      markdownItOptions: {
+        html: true,
+        linkify: true,
+        typographer: true,
+        highlight: function (str, lang) {
+          if (lang && hljs.getLanguage(lang)) {
+            try {
+              return hljs.highlight(str, { language: lang }).value;
+            } catch (__) {}
+          }
+      
+          return ''; // use external default escaping
+        }
+      },
+    }),
   ],
   resolve: {
     alias: {
