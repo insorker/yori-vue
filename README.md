@@ -33,6 +33,8 @@ PS: The detailed implementation approach is documented in [this article (还没�
 ## Install
 
 > There is no guarantee that the latest version is the final version, but it may be the stable version.
+> 
+> The project is currently in development stage and will be released on npm after development is completed.
 
 Git clone this repository and run `npm install`.
 
@@ -60,9 +62,10 @@ Markdown files need to have a YAML front matter. The front matter should follow 
 title: Your Title Here
 date: YYYY-MM-DD
 brief: Your Brief Here
+image?: Image Url
 ```
 
-Replace 'YYYY-MM-DD' with the date you created or last modified the file.
+"?" is not part of the configuration, it indicates that the option can be left blank. Replace 'YYYY-MM-DD' with the date you created or last modified the file.
 
 ### project
 
