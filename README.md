@@ -17,13 +17,13 @@ A static blog generator, based on Vue, inherits from Yori.
 </p>
 
 <p align="center">
-  <img width="75%" src="https://insorker-bucket.oss-cn-hangzhou.aliyuncs.com/img/blog/202305052330003.PNG" />
+  <img width="75%" src="https://image.insorker.site/2023/08/48b730d215b8549edc5230fd568e78d1.png" />
 </p>
 
 Another tiny static blog generator, Hahaha. The predecessor of the yori-vue project is [yori](https://github.com/insorker/yori), so their goals are aligned:
 
 <p align="center">
-<b><i>Aim to help you break free from modern, convenient but resource-heavy tools.</b></i>
+  <b><i>Aim to help you break free from modern, convenient but resource-heavy tools.</b></i>
 </p>
 
 I have tried some modern SSGs and finally decided to build one myself, so I wrote this. I hope you will enjoy this project.

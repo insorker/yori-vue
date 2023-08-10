@@ -2,7 +2,7 @@
 title: Hello World
 date: 2023-05-04
 brief: This is the FIRST 'Hello World'!
-image: https://image.insorker.cn/img/blog/202305052330003.PNG
+image: https://image.insorker.site/2023/08/48b730d215b8549edc5230fd568e78d1.png
 ---
 
 # Hello World! This is yori-vue! 🎉🎉🎉
