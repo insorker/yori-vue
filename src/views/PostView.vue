@@ -17,7 +17,7 @@ console.log(meta.value)
     <div class="yr-content-wrapper yr-flex-column yr-gap-1">
       <div class="post__spacer"></div>
       <div class="post__header yr-flex-column yr-gap-sm">
-        <div  class="post__image" v-if="meta.image"><img :src="meta.image" /></div>
+        <div  class="yr-img" v-if="meta.image"><img :src="meta.image" /></div>
         <h1 class="post__title yr-fs-1">{{ meta.title }}</h1>
         <div class="post__date yr-fs-3">{{ meta.date }}</div>
       </div>
@@ -47,14 +47,6 @@ console.log(meta.value)
 }
 .post__header {
   align-items: center;
-}
-.post__image {
-  width: 100%;
-}
-.post__image img {
-  max-width: 100%;
-  border-radius: 1rem;
-  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 25%);
 }
 .post__title {
   margin-bottom: 10px;

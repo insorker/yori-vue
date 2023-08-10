@@ -1,5 +1,7 @@
 <template>
-  <img src="/note_playground.gif" />
+  <div class="yr-img">
+    <img src="/note_playground.gif" />
+  </div>
 </template>
 
 <style scoped>

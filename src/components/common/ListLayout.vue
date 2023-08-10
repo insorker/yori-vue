@@ -24,9 +24,9 @@ defineProps<{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: var(--yr-v-gap);
+  gap: var(--list-gap);
 
-  --yr-v-gap: var(--yr-font-size-h2);
+  --list-gap: var(--yr-font-size-h2);
 }
 .list__header-playground {
   display: none;
@@ -40,9 +40,9 @@ defineProps<{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: var(--yr-v-gap);
+    gap: var(--list-gap);
 
-    --yr-v-gap: 10vw;
+    --list-gap: 5vw;
   }
 
   .list__spacer {

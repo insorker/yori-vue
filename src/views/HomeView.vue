@@ -78,7 +78,7 @@ ul, li {
   z-index: -1;
 }
 .home__bg img {
-  display: block;
+  max-width: none;
   height: 100%;
 }
 .home__pane {
