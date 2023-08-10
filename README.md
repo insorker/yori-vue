@@ -13,7 +13,7 @@ A static blog generator, based on Vue, inherits from Yori.
 </p>
 
 <p align="center">
-  <a href="https://insorker.github.io/">Demo</a> | <a href="https://github.com/insorker/yori-vue#Install">Install</a> | <a href="https://github.com/insorker/yori-vue#Usage">Usage</a>
+  <a href="https://insorker.github.io/">Demo</a> | <a href="#install">Install</a> | <a href="#usage">Usage</a>
 </p>
 
 <p align="center">
