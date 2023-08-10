@@ -1,4 +1,7 @@
 <script setup lang="ts">
+/**
+ * 整个页面的布局
+ */
 import TheHeader from '@/components/common/TheHeader.vue';
 import TheFooter from '@/components/common/TheFooter.vue';
 </script>
