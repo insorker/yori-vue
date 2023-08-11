@@ -2,7 +2,8 @@
 import { ref } from 'vue'
 import SocialLink from '@/components/common/SocialLink.vue'
 import TheFooter from '@/components/common/TheFooter.vue'
-import NavLink from '@/components/home/NavLink.vue'
+import HomeNav from '@/components/home/HomeNav.vue'
+import HomeImage from '@/components/home/HomeImage.vue'
 import self from '../../docs/home/self.json'
 
 const title = ref(self.name)
@@ -13,6 +14,7 @@ for (let idx in self.brief) {
   })
 }
 const social_link = ref(self['social-link'])
+
 const switcher = ref(0)
 const switcherTrigger = () => {
   switcher.value += 1
@@ -24,9 +26,6 @@ const switcherTrigger = () => {
 
 <template>
   <div class="home">
-    <div class="home__bg">
-      <img style="margin-left: 35vw;" src="/background.png">
-    </div>
     <div class="home__pane yr-flex-column yr-gap-null">
       <div class="yr-flex-column yr-gap-1">
         <h1 class="home__pane-title yr-fs-1">{{ title }}</h1>
@@ -41,15 +40,18 @@ const switcherTrigger = () => {
           </div>
         </ul>
         <div class="yr-flex-column yr-gap-4">
-          <NavLink name="Project" path="project"></NavLink>
-          <NavLink name="Note" path="note"></NavLink>
-          <NavLink name="About" path="about"></NavLink>
+          <HomeNav name="Project" path="project"></HomeNav>
+          <HomeNav name="Note" path="note"></HomeNav>
+          <HomeNav name="About" path="about"></HomeNav>
         </div>
       </div>
       <TheFooter />
       <div class="home__pane-switcher yr-flex-column yr-gap-4">
         <div class="home__pane-switcher-item" @click="switcherTrigger"></div>
       </div>
+    </div>
+    <div v-if="switcher == 0" class="home__image">
+      <HomeImage />
     </div>
     <div v-if="switcher == 1" class="home__playground yr-flex-column yr-gap-null">
       <div class="xdsh">
@@ -63,29 +65,20 @@ const switcherTrigger = () => {
 .home {
   position: relative;
   display: flex;
-
+  height: 100vh;
 }
 ul, li {
   padding: 0;
   margin: 0;
   list-style: none
 }
-.home__bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  z-index: -1;
-}
-.home__bg img {
-  max-width: none;
-  height: 100%;
-}
 .home__pane {
+  flex: 0 0 auto;
   position: relative;
   width: 55%;
   min-height: 100vh;
   padding: 0px 10%;
+  z-index: 10;
   background: var(--color-background);
   box-shadow: 16px 0px 24px 0px rgba(0, 0, 0, 25%);
 }
@@ -126,6 +119,9 @@ ul, li {
   background-color: var(--color-brand);
   box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 15%);
 }
+.home__image {
+  flex: 1 0 auto;
+}
 .home__playground {
   background-color: var(--color-background);
   width: 45%;
@@ -134,14 +130,14 @@ ul, li {
 }
 
 @media (max-width: 1024px) {
-  .home__bg {
-    display: none;
-  }
   .home__pane {
     width: 100%;
     justify-content: space-around;
   }
   .home__pane-switcher {
+    display: none;
+  }
+  .home__image {
     display: none;
   }
   .home__playground {
