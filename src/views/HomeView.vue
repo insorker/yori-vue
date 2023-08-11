@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import SocialLink from '@/components/common/SocialLink.vue'
-import TheFooter from '@/components/common/TheFooter.vue'
+import TheFooter from '@/components/layout/TheFooter.vue'
 import HomeNav from '@/components/home/HomeNav.vue'
 import HomeImage from '@/components/home/HomeImage.vue'
 import self from '../../docs/home/self.json'
