@@ -25,12 +25,17 @@ defineProps<{
 .post-card__date {
   color: var(--color-text-soft);
 }
-
 .post-card__title {
   color: var(--color-text);
   transition: all 0.3s ease;
 }
 .post-card__title:hover {
   color: var(--color-brand);
+}
+.post-card__brief {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 </style>

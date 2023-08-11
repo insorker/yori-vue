@@ -93,7 +93,7 @@ body {
 
 ::-webkit-scrollbar {
   width: 0.5rem;
-  height: 1rem;
+  height: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
