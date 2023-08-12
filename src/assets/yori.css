@@ -1,15 +1,5 @@
 @import './base.css';
 
-a {
-  color: inherit;
-  /* white-space: nowrap; */
-  text-decoration: none;
-}
-
-a:hover {
-  cursor: pointer;
-}
-
 .yr-flex-row {
   display: flex;
   flex-direction: row;
@@ -17,62 +7,35 @@ a:hover {
   gap: var(--yr-v-gap);
 }
 
-.yr-flex-column {
+.yr-flex-col {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: var(--yr-v-gap);
 }
 
-.yr-fs-1 {
-  font-size: var(--yr-font-size-h1);
-  font-weight: bold;
-}
-
-.yr-fs-2 {
-  font-size: var(--yr-font-size-h2);
-  font-weight: 600;
-}
-
-.yr-fs-3 {
-  font-size: var(--yr-font-size-h3);
-}
-
-.yr-fs-sm {
-  font-size: var(--yr-font-size-sm);
-}
-
 .yr-gap-0 {
-  --yr-v-gap: 160px;
-}
-
-.yr-gap-1 {
-  --yr-v-gap: var(--yr-font-size-h1);
-}
-
-.yr-gap-2 {
-  --yr-v-gap: var(--yr-font-size-h2);
-}
-
-.yr-gap-3 {
-  --yr-v-gap: var(--yr-font-size-h3);
-}
-
-.yr-gap-4 {
-  --yr-v-gap: var(--yr-font-size);
-}
-
-.yr-gap-sm {
-  --yr-v-gap: var(--yr-font-size-sm);
-}
-
-.yr-gap-null {
   --yr-v-gap: 0px;
 }
 
-.yr-content-wrapper {
-  width: 100%;
-  max-width: var(--yr-content-width);
+.yr-gap-1 {
+  --yr-v-gap: var(--yr-fs-1);
+}
+
+.yr-gap-2 {
+  --yr-v-gap: var(--yr-fs-2);
+}
+
+.yr-gap-3 {
+  --yr-v-gap: var(--yr-fs-3);
+}
+
+.yr-gap-4 {
+  --yr-v-gap: var(--yr-fs-4);
+}
+
+.yr-gap-5 {
+  --yr-v-gap: var(--yr-fs-5);
 }
 
 .yr-img {
