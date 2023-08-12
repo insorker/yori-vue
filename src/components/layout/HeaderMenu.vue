@@ -25,8 +25,8 @@ const fold = ref(true)
   width: 30px;
 }
 .dropdown__button {
-  background: inherit;
   color: black;
+  background: inherit;
 }
 .dropdown__content {
   position: absolute;
@@ -43,7 +43,7 @@ const fold = ref(true)
 /* Style the dropdown content (hidden by default) */
 .dropdown__list {
   position: relative;
-  padding: 0 var(--yr-font-size);
+  padding: 0 var(--yr-fs-4);
   background-color: var(--color-background-soft);
   z-index: 10;
   transform: scaleY(0);
@@ -56,8 +56,9 @@ const fold = ref(true)
   transform: scaleY(1);
 }
 .dropdown__mask {
-  position: absolute;
-  top: 0px;
+  position: fixed;
+  height: 0px;
+  top: 3.25rem;
   bottom: 0px;
   left: 0px;
   right: 0px;
@@ -68,5 +69,6 @@ const fold = ref(true)
 }
 .dropdown__unfold .dropdown__mask {
   opacity: 1;
+  height: auto;
 }
 </style>

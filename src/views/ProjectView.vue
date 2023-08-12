@@ -8,7 +8,7 @@ const projects = ref(repo.split('\n'))
 </script>
 
 <template>
-  <div class="project yr-flex-column yr-gap-2">
+  <div class="project yr-flex-col yr-gap-2">
     <div class="list__spacer"></div>
     <AvatarHeader title="project" />
     <div class="project__content">

@@ -13,7 +13,7 @@ const { metaArray } = usePostMetaStore()
       <NotePlayground />
     </template>
     <template v-slot:content>
-      <div class="note__content yr-content-wrapper yr-flex-column yr-gap-null">
+      <div class="note__content yr-flex-col yr-gap-0">
         <NoteCard v-for="item in metaArray" :to="item.path" :meta="item.meta" />
       </div>
     </template>

@@ -9,7 +9,7 @@ defineProps<{
 <template>
   <div class="list">
     <div class="list__spacer"></div>
-    <div class="list__header yr-flex-column yr-gap-null">
+    <div class="list__header yr-flex-col yr-gap-0">
       <AvatarHeader class="list__header-title" title="note" />
       <div class="list__header-playground"><slot name="playground" /></div>
     </div>
@@ -26,7 +26,7 @@ defineProps<{
   justify-content: center;
   gap: var(--list-gap);
 
-  --list-gap: var(--yr-font-size-h2);
+  --list-gap: var(--yr-fs-2);
 }
 .list__header-playground {
   display: none;

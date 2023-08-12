@@ -7,7 +7,7 @@ defineProps<{
 
 <template>
   <div class="post-card">
-    <RouterLink :to="to" class="yr-flex-column yr-gap-4">
+    <RouterLink :to="to" class="yr-flex-col yr-gap-4">
       <div class="post-card__header">
         <div class="post-card__title yr-fs-2">{{ meta.title }}</div>
         <div class="post-card__date yr-fs-sm">{{ meta.date }}</div>
@@ -19,7 +19,7 @@ defineProps<{
 
 <style scoped>
 .post-card {
-  padding: var(--yr-font-size-h2) 0px;
+  padding: var(--yr-fs-2) 0px;
   border-bottom: 1px solid var(--color-border);
 }
 .post-card__date {

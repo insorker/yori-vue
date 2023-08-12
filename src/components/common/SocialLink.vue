@@ -7,29 +7,27 @@ defineProps<{
 </script>
 
 <template>
-  <a class="social-link" :href="url" target="_blank" rel="noopener">
-    <span v-if="icon" class="social-link__icon" :icon="icon"></span><span v-if="font" class="social-link__font">{{ font }}</span>
+  <a class="link yr-flex-row yr-gap-0" :href="url" target="_blank" rel="noopener">
+    <span v-if="icon" class="link__icon" :icon="icon"></span>
+    <span v-if="font" class="link__font">{{ font }}</span>
   </a>
 </template>
 
 <style scoped>
 a {
-  color: var(--color-text);
-  background: var(--color-background-grey);
+  color: var(--yr-c-text-1);
+  background: var(--yr-c-gray-light-1);
   transition: color 0.5s, background-color 0.5s;
 }
 a:hover {
-  color: var(--color-text-reverse);
-  background-color: var(--color-brand);
+  color: var(--yr-c-text-inverse-1);
+  background-color: var(--yr-c-brand);
 }
-.social-link {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
+.link {
   padding: 0.5rem;
   border-radius: 0.5rem;
 }
-.social-link__icon {
+.link__icon {
   -webkit-mask: var(--un-icon) no-repeat;
   mask: var(--un-icon) no-repeat;
   -webkit-mask-size: 100% 100%;
@@ -41,7 +39,7 @@ a:hover {
   height: 1.2em;
   vertical-align: text-bottom;
 }
-.social-link__font {
+.link__font {
   margin-left: 0.25rem;
 }
 [icon="github"] {

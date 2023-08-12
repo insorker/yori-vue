@@ -13,10 +13,10 @@ console.log(meta.value)
 </script>
 
 <template>
-  <div class="post yr-flex-column yr-gap-null">
-    <div class="yr-content-wrapper yr-flex-column yr-gap-1">
+  <div class="post yr-flex-col yr-gap-0">
+    <div class="yr-flex-col yr-gap-1">
       <div class="post__spacer"></div>
-      <div class="post__header yr-flex-column yr-gap-sm">
+      <div class="post__header yr-flex-col yr-gap-5">
         <div  class="yr-img" v-if="meta.image"><img :src="meta.image" /></div>
         <h1 class="post__title yr-fs-1">{{ meta.title }}</h1>
         <div class="post__date yr-fs-3">{{ meta.date }}</div>
@@ -44,6 +44,7 @@ console.log(meta.value)
 <style scoped>
 .post {
   align-items: center;
+  max-width: var(--yr-content-width);
 }
 .post__header {
   align-items: center;

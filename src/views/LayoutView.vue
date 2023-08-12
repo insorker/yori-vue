@@ -7,10 +7,10 @@ import TheFooter from '@/components/layout/TheFooter.vue';
 </script>
 
 <template>
-  <div class="page yr-flex-column yr-gap-null">
-    <TheHeader />
-    <RouterView class="page__content" />
-    <div class="page__spacer"></div>
+  <div class="page yr-flex-col yr-gap-0">
+    <TheHeader class="header" />
+    <RouterView class="content" />
+    <div class="spacer"></div>
     <TheFooter />
   </div>
 </template>
@@ -19,10 +19,17 @@ import TheFooter from '@/components/layout/TheFooter.vue';
 .page {
   min-height: 100vh;
 }
-.page__content {
-  padding: 0 var(--yr-content-padding);
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 3.25rem;
 }
-.page__spacer {
+.content {
+  padding: 3.25rem 1.5rem 0 1.5rem;
+}
+.spacer {
   flex: 1;
 }
 </style>

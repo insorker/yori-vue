@@ -5,20 +5,23 @@ defineProps<{
 </script>
 
 <template>
-  <div class="avatar-header yr-flex-row yr-gap-2">
-    <img src="/avatar.png" alt="avatar" class="avatar-header__avatar">
-    <h1 class="yr-fs-1">{{ title }}</h1>
+  <div class="avatar yr-flex-row yr-gap-2">
+    <img class="avatar__img" src="/avatar.png" alt="avatar" />
+    <h1 class="avatar__name">{{ title }}</h1>
   </div>
 </template>
 
 <style scoped>
-.avatar-header {
+.avatar {
   align-items: center;
 }
-.avatar-header__avatar {
+.avatar__img {
   vertical-align: middle;
-  width: var(--yr-font-size-h1);
-  height: var(--yr-font-size-h1);
+  width: var(--yr-fs-1);
+  height: var(--yr-fs-1);
   border-radius: 50%;
+}
+.avatar__name {
+  font-size: var(--yr-fs-1);
 }
 </style>

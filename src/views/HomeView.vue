@@ -14,49 +14,33 @@ for (let idx in self.brief) {
   })
 }
 const social_link = ref(self['social-link'])
-
-const switcher = ref(0)
-const switcherTrigger = () => {
-  switcher.value += 1
-  if (switcher.value > 1) {
-    switcher.value = 0
-  }
-}
 </script>
 
 <template>
   <div class="home">
-    <div class="home__pane yr-flex-column yr-gap-null">
-      <div class="yr-flex-column yr-gap-1">
-        <h1 class="home__pane-title yr-fs-1">{{ title }}</h1>
-        <ul class="home__pane-brief yr-flex-column yr-gap-3">
-          <li v-for="sentence in brief" :key="sentence.id">
-            {{ sentence.text }}
+    <div class="home__pane yr-flex-col yr-gap-0">
+      <div class="yr-flex-col yr-gap-1">
+        <h1 class="home__pane-title">{{ title }}</h1>
+        <ul class="home__pane-brief yr-flex-col yr-gap-3">
+          <li v-for="sentence in brief" :key="sentence.id">{{ sentence.text }}</li>
+          <li>
+            <ul class="home__pane-link">
+              <li><SocialLink icon="github" font="github" :url="social_link.github"></SocialLink></li>
+              <li><SocialLink icon="bilibili" font="bilibili" :url="social_link.bilibili"></SocialLink></li>
+              <!-- <li><SocialLink icon="zhihu" url="https://www.zhihu.com/people/zhu-xing-da-15"></SocialLink></li> -->
+            </ul>
           </li>
-          <div class="home__pane-social-link">
-            <SocialLink icon="github" font="github" :url="social_link.github"></SocialLink>
-            <SocialLink icon="bilibili" font="bilibili" :url="social_link.bilibili"></SocialLink>
-            <!-- <SocialLink icon="zhihu" url="https://www.zhihu.com/people/zhu-xing-da-15"></SocialLink> -->
-          </div>
         </ul>
-        <div class="yr-flex-column yr-gap-4">
-          <HomeNav name="Project" path="project"></HomeNav>
-          <HomeNav name="Note" path="note"></HomeNav>
-          <HomeNav name="About" path="about"></HomeNav>
-        </div>
+        <ul class="yr-flex-col yr-gap-4">
+          <li><HomeNav name="Project" path="project"></HomeNav></li>
+          <li><HomeNav name="Note" path="note"></HomeNav></li>
+          <li><HomeNav name="About" path="about"></HomeNav></li>
+        </ul>
       </div>
       <TheFooter />
-      <div class="home__pane-switcher yr-flex-column yr-gap-4">
-        <div class="home__pane-switcher-item" @click="switcherTrigger"></div>
-      </div>
     </div>
-    <div v-if="switcher == 0" class="home__image">
+    <div class="home__image">
       <HomeImage />
-    </div>
-    <div v-if="switcher == 1" class="home__playground yr-flex-column yr-gap-null">
-      <div class="xdsh">
-        To be built...
-      </div>
     </div>
   </div>
 </template>
@@ -67,11 +51,6 @@ const switcherTrigger = () => {
   display: flex;
   height: 100vh;
 }
-ul, li {
-  padding: 0;
-  margin: 0;
-  list-style: none
-}
 .home__pane {
   flex: 0 0 auto;
   position: relative;
@@ -79,54 +58,26 @@ ul, li {
   min-height: 100vh;
   padding: 0px 10%;
   z-index: 10;
-  background: var(--color-background);
+  background: var(--yr-c-bg);
   box-shadow: 16px 0px 24px 0px rgba(0, 0, 0, 25%);
 }
 .home__pane-title {
   margin-bottom: 0px;
+  font-size: var(--yr-fs-1);
 }
 .home__pane-brief {
-  color: var(--color-text-soft);
-  list-style: none;
+  color: var(--yr-c-text-2);
 }
-.home__pane-social-link {
+.home__pane-link {
   display: flex;
   flex-direction: row;
   justify-content: start;
 }
-.home__pane-social-link > * {
+.home__pane-link > * {
   margin-right: 1rem;
-}
-.home__pane-switcher {
-  position: absolute;
-  align-items: center;
-  width: 32px;
-  height: 32px;
-  right: 16px;
-  bottom: 16px;
-}
-.home__pane-switcher-item {
-  width: 20px;
-  height: 20px;
-  transition: all 0.3s ease;
-}
-.home__pane-switcher-item:hover {
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: solid 1px var(--color-border);
-  background-color: var(--color-brand);
-  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 15%);
 }
 .home__image {
   flex: 1 0 auto;
-}
-.home__playground {
-  background-color: var(--color-background);
-  width: 45%;
-  min-height: 100vh;
-  align-items: center;
 }
 
 @media (max-width: 1024px) {
@@ -134,13 +85,7 @@ ul, li {
     width: 100%;
     justify-content: space-around;
   }
-  .home__pane-switcher {
-    display: none;
-  }
   .home__image {
-    display: none;
-  }
-  .home__playground {
     display: none;
   }
 }

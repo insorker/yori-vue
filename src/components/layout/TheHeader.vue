@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import HeaderLogo from './HeaderLogo.vue'
 import HeaderNav from './HeaderNav.vue'
 import HeaderMenu from './HeaderMenu.vue'
 import { ref } from 'vue'
@@ -13,17 +14,17 @@ const navItems = ref([
 <template>
   <header class="header">
     <nav class="header__nav-left">
-      <HeaderNav name="Insorker" path="/" />
+      <HeaderLogo name="Insorker" path="/" />
     </nav>
     <nav class="header__nav-right">
       <div class="header__nav-row">
-        <ul class="yr-flex-row yr-gap-null">
+        <ul class="yr-flex-row yr-gap-0">
           <li v-for="item in navItems"><HeaderNav :name="item.name" :path="item.path" /></li>
         </ul>
       </div>
       
       <HeaderMenu class="header__nav-col">
-        <ul class="yr-flex-column yr-gap-null">
+        <ul class="yr-flex-col yr-gap-0">
           <li v-for="item in navItems"><HeaderNav :name="item.name" :path="item.path" /></li>
         </ul>
       </HeaderMenu>
@@ -43,8 +44,11 @@ ul li {
 .header {
   display: flex;
   align-items: center;
-  padding: 0 var(--yr-padding);
+  padding: 0 1.5rem 0 2.5rem;
   border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-background);
+  backdrop-filter: 24px;
+  -webkit-backdrop-filter: 24px;
 }
 .header__nav-left {
   flex: 1 0 auto;
@@ -65,6 +69,9 @@ ul li {
   border-bottom: none;
 }
 @media (max-width: 640px) {
+  .header {
+    padding: 0 1.5rem;
+  }
   .header__nav-row {
     display: none;
   }
