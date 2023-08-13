@@ -5,10 +5,12 @@ import { usePostMetaStore } from '@/stores/PostMeta'
 import Giscus from '@giscus/vue'
 import 'github-markdown-css'
 import 'highlight.js/styles/github.css'
+import { useTheme } from '@/utils/theme'
 
 const route = useRoute()
 const { metaHash } = usePostMetaStore()
 const meta = ref(metaHash[route.path])
+const { themeYori } = useTheme()
 </script>
 
 <template>
@@ -21,6 +23,7 @@ const meta = ref(metaHash[route.path])
     </div>
     <RouterView class="post__content" />
     <Giscus
+      :key="themeYori"
       repo="insorker/insorker.github.io"
       repo-id="MDEwOlJlcG9zaXRvcnkzMDI5NTUyMjU="
       category="Announcements"
@@ -30,7 +33,7 @@ const meta = ref(metaHash[route.path])
       reactions-enabled="1"
       emit-metadata="0"
       input-position="top"
-      theme="preferred_color_scheme"
+      :theme="themeYori"
       lang="zh-CN"
       loading="lazy"
       crossorigin="anonymous">

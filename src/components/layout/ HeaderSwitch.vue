@@ -1,41 +1,13 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-const switchState = ref(false)
+import { ref } from 'vue'
+import { useTheme, switchTheme } from '@/utils/theme'
 
-function switchTheme() {
-  const htmlELement = document.getElementsByTagName('html')[0]
-
-  if (htmlELement.classList.contains('light')) {
-    htmlELement.classList.remove('light')
-    htmlELement.classList.add('dark')
-  }
-  else {
-    htmlELement.classList.remove('dark')
-    htmlELement.classList.add('light')
-  }
-}
-
-onMounted(() => {
-  const htmlELement = document.getElementsByTagName('html')[0]
-  // https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript
-  const theme = window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light"
-  
-  if (htmlELement.classList.contains('light')) {
-    switchState.value = false
-  }
-  else if (htmlELement.classList.contains('dark')) {
-    switchState.value = true
-  }
-  else {
-    htmlELement.classList.add(theme)
-    switchState.value = theme == 'dark'? true : false
-  }
-})
+const { themeState } = useTheme()
 </script>
 
 <template>
   <div class="switch">
-    <keep-alive><input class="switch__checkbox" type="checkbox" id="yr-id-switch-theme" v-model="switchState" @change="switchTheme"/></keep-alive>
+    <keep-alive><input class="switch__checkbox" type="checkbox" id="yr-id-switch-theme" v-model="themeState" @change="switchTheme"/></keep-alive>
     <label for="yr-id-switch-theme" class="switch__button"></label>
   </div>
 </template>
