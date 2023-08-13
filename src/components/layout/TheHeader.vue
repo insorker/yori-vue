@@ -2,6 +2,7 @@
 import HeaderLogo from './HeaderLogo.vue'
 import HeaderNav from './HeaderNav.vue'
 import HeaderMenu from './HeaderMenu.vue'
+import HeaderSwitch from './ HeaderSwitch.vue'
 import { ref } from 'vue'
 
 const navItems = ref([
@@ -22,12 +23,14 @@ const navItems = ref([
           <li v-for="item in navItems"><HeaderNav :name="item.name" :path="item.path" /></li>
         </ul>
       </div>
-      
       <HeaderMenu class="header__nav-col">
         <ul class="yr-flex-col yr-gap-0">
           <li v-for="item in navItems"><HeaderNav :name="item.name" :path="item.path" /></li>
         </ul>
       </HeaderMenu>
+      <div class="header__switch">
+        <HeaderSwitch />
+      </div>
     </nav>
   </header>
 </template>
@@ -62,6 +65,9 @@ ul li {
 }
 .header__nav-col ul li:last-child {
   border-bottom: none;
+}
+.header__switch {
+  align-items: center;
 }
 @media (max-width: 640px) {
   .header {
