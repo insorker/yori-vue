@@ -27,6 +27,7 @@ defineProps<{
   background: var(--yr-c-bg-soft);
 }
 .nav svg path {
+  fill: var(--yr-c-text-1);
   transition: fill 0.5s;
 }
 .nav:hover svg path {

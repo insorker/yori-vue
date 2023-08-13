@@ -7,9 +7,7 @@ const fold = ref(true)
 <template>
   <div class="dropdown">
     <div class="dropdown__button" @click="fold = !fold">
-      <span>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg>
-      </span>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg>
     </div>
     <div :class="[ 'dropdown__content', { 'dropdown__unfold': !fold } ]" @click="fold = true">
       <div class="dropdown__list">
@@ -27,6 +25,12 @@ const fold = ref(true)
 .dropdown__button {
   color: black;
   background: inherit;
+}
+.dropdown__button:hover {
+  cursor: pointer;
+}
+.dropdown__button svg {
+  fill: var(--yr-c-text-1);
 }
 .dropdown__content {
   position: absolute;

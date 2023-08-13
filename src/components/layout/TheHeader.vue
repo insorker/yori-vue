@@ -21,17 +21,21 @@ const navItems = ref([
       <div class="header__nav-row">
         <ul class="yr-flex-row yr-gap-0">
           <li v-for="item in navItems"><HeaderNav :name="item.name" :path="item.path" /></li>
+          <li class="header__nav-switch">
+            <HeaderSwitch />
+          </li>
         </ul>
       </div>
       <HeaderMenu class="header__nav-col">
         <ul class="yr-flex-col yr-gap-0">
           <li v-for="item in navItems"><HeaderNav :name="item.name" :path="item.path" /></li>
+          <li class="header__nav-switch">
+            <HeaderSwitch />
+          </li>
         </ul>
       </HeaderMenu>
-      <div class="header__switch">
-        <HeaderSwitch />
-      </div>
     </nav>
+    
   </header>
 </template>
 
@@ -66,7 +70,8 @@ ul li {
 .header__nav-col ul li:last-child {
   border-bottom: none;
 }
-.header__switch {
+.header__nav-witch {
+  flex: 0 0 auto;
   align-items: center;
 }
 @media (max-width: 640px) {

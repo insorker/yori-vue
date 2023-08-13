@@ -17,6 +17,7 @@ function switchTheme() {
 
 onMounted(() => {
   const htmlELement = document.getElementsByTagName('html')[0]
+  // https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript
   const theme = window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light"
   
   if (htmlELement.classList.contains('light')) {
@@ -45,6 +46,10 @@ onMounted(() => {
   height: 100%;
   position:relative;
   align-items: center;
+  padding: var(--yr-fs-4);
+}
+.switch__checkbox {
+  position: absolute;
 }
 .switch__button {
   --yr-switch-height: calc(var(--yr-fs-3));
