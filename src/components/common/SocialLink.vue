@@ -16,7 +16,7 @@ defineProps<{
 <style scoped>
 a {
   color: var(--yr-c-text-1);
-  background: var(--yr-c-gray-light-1);
+  background: var(--yr-c-gray-1);
   transition: color 0.5s, background-color 0.5s;
 }
 a:hover {
@@ -32,7 +32,7 @@ a:hover {
   mask: var(--un-icon) no-repeat;
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
-  color: inherit;
+  color: var(--yr-c-text-1);
   background-color: currentColor;
   display: inline-block;
   width: 1.2em;

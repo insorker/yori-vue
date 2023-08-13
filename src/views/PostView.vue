@@ -9,7 +9,6 @@ import 'highlight.js/styles/github.css'
 const route = useRoute()
 const { metaHash } = usePostMetaStore()
 const meta = ref(metaHash[route.path])
-console.log(meta.value)
 </script>
 
 <template>

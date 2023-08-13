@@ -1,31 +1,40 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { ref, onMounted } from 'vue'
+const switchState = ref(false)
 
 function switchTheme() {
   const htmlELement = document.getElementsByTagName('html')[0]
 
   if (htmlELement.classList.contains('light')) {
     htmlELement.classList.remove('light')
-    htmlELement.classList.add('dark');
+    htmlELement.classList.add('dark')
   }
   else {
     htmlELement.classList.remove('dark')
-    htmlELement.classList.add('light');
+    htmlELement.classList.add('light')
   }
-
-  console.log(1)
 }
+
 onMounted(() => {
   const htmlELement = document.getElementsByTagName('html')[0]
   const theme = window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light"
-
-  htmlELement.classList.add(theme)
+  
+  if (htmlELement.classList.contains('light')) {
+    switchState.value = false
+  }
+  else if (htmlELement.classList.contains('dark')) {
+    switchState.value = true
+  }
+  else {
+    htmlELement.classList.add(theme)
+    switchState.value = theme == 'dark'? true : false
+  }
 })
 </script>
 
 <template>
   <div class="switch">
-    <input class="switch__checkbox" type="checkbox" id="yr-id-switch-theme" @change="switchTheme"/>
+    <keep-alive><input class="switch__checkbox" type="checkbox" id="yr-id-switch-theme" v-model="switchState" @change="switchTheme"/></keep-alive>
     <label for="yr-id-switch-theme" class="switch__button"></label>
   </div>
 </template>
