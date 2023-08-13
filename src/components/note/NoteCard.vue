@@ -9,8 +9,8 @@ defineProps<{
   <div class="post-card">
     <RouterLink :to="to" class="yr-flex-col yr-gap-4">
       <div class="post-card__header">
-        <div class="post-card__title yr-fs-2">{{ meta.title }}</div>
-        <div class="post-card__date yr-fs-sm">{{ meta.date }}</div>
+        <div class="post-card__date">{{ meta.date }}</div>
+        <div class="post-card__title">{{ meta.title }}</div>
       </div>
       <div class="post-card__brief">{{ meta.brief }}</div>
     </RouterLink>
@@ -23,16 +23,20 @@ defineProps<{
   border-bottom: 1px solid var(--color-border);
 }
 .post-card__date {
-  color: var(--color-text-soft);
+  color: var(--yr-c-text-2);
 }
 .post-card__title {
-  color: var(--color-text);
+  color: var(--yr-c-text-1);
+  font-size: var(--yr-fs-2);
+  font-weight: 600;
   transition: all 0.3s ease;
 }
 .post-card__title:hover {
-  color: var(--color-brand);
+  color: var(--yr-c-brand);
 }
 .post-card__brief {
+  font-size: var(--yr-fs-5);
+  color: var(--yr-c-text-2);
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;

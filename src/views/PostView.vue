@@ -13,47 +13,47 @@ console.log(meta.value)
 </script>
 
 <template>
-  <div class="post yr-flex-col yr-gap-0">
-    <div class="yr-flex-col yr-gap-1">
-      <div class="post__spacer"></div>
-      <div class="post__header yr-flex-col yr-gap-5">
-        <div  class="yr-img" v-if="meta.image"><img :src="meta.image" /></div>
-        <h1 class="post__title yr-fs-1">{{ meta.title }}</h1>
-        <div class="post__date yr-fs-3">{{ meta.date }}</div>
-      </div>
-      <RouterView class="post__content" />
-      <Giscus
-        repo="insorker/insorker.github.io"
-        repo-id="MDEwOlJlcG9zaXRvcnkzMDI5NTUyMjU="
-        category="Announcements"
-        category-id="DIC_kwDOEg662c4CSpKy"
-        mapping="url"
-        strict="0"
-        reactions-enabled="1"
-        emit-metadata="0"
-        input-position="top"
-        theme="preferred_color_scheme"
-        lang="zh-CN"
-        loading="lazy"
-        crossorigin="anonymous">
-      </Giscus>
+  <div class="post yr-flex-col yr-gap-1">
+    <div class="post__spacer"></div>
+    <div class="post__header yr-flex-col yr-gap-5">
+      <div  class="yr-img" v-if="meta.image"><img :src="meta.image" /></div>
+      <h1 class="post__title">{{ meta.title }}</h1>
+      <div class="post__date">{{ meta.date }}</div>
     </div>
+    <RouterView class="post__content" />
+    <Giscus
+      repo="insorker/insorker.github.io"
+      repo-id="MDEwOlJlcG9zaXRvcnkzMDI5NTUyMjU="
+      category="Announcements"
+      category-id="DIC_kwDOEg662c4CSpKy"
+      mapping="url"
+      strict="0"
+      reactions-enabled="1"
+      emit-metadata="0"
+      input-position="top"
+      theme="preferred_color_scheme"
+      lang="zh-CN"
+      loading="lazy"
+      crossorigin="anonymous">
+    </Giscus>
   </div>
 </template>
 
 <style scoped>
 .post {
-  align-items: center;
-  max-width: var(--yr-content-width);
+  width: 100%;
+  max-width: 720px;
 }
 .post__header {
   align-items: center;
 }
 .post__title {
   margin-bottom: 10px;
+  font-size: var(--yr-fs-1);
 }
 .post__date {
-  color: var(--color-text-soft);
+  color: var(--yr-c-text-2);
+  font-size: var(--yr-fs-3);
 }
 .markdown-body {
   font-size: 16px;

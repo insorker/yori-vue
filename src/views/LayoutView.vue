@@ -18,6 +18,7 @@ import TheFooter from '@/components/layout/TheFooter.vue';
 <style scoped>
 .page {
   min-height: 100vh;
+  align-items: center;
 }
 .header {
   position: fixed;

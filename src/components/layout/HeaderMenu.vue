@@ -44,7 +44,7 @@ const fold = ref(true)
 .dropdown__list {
   position: relative;
   padding: 0 var(--yr-fs-4);
-  background-color: var(--color-background-soft);
+  background-color: var(--yr-c-bg-soft);
   z-index: 10;
   transform: scaleY(0);
   transform-origin: top;
@@ -63,12 +63,9 @@ const fold = ref(true)
   left: 0px;
   right: 0px;
   background-color: #0003;
-  opacity: 0;
-  transition: opacity .3s;
   z-index: 9;
 }
 .dropdown__unfold .dropdown__mask {
-  opacity: 1;
-  height: auto;
+  height: calc(100vh - 3.25rem);
 }
 </style>

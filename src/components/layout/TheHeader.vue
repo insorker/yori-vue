@@ -33,11 +33,6 @@ const navItems = ref([
 </template>
 
 <style scoped>
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
 ul li {
   display: flex;
 }
@@ -45,10 +40,10 @@ ul li {
   display: flex;
   align-items: center;
   padding: 0 1.5rem 0 2.5rem;
-  border-bottom: 1px solid var(--color-border);
-  background-color: var(--color-background);
-  backdrop-filter: 24px;
-  -webkit-backdrop-filter: 24px;
+  border-bottom: 1px solid var(--yr-c-divider);
+  background-color: var(--yr-c-bg-blur);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 .header__nav-left {
   flex: 1 0 auto;
@@ -63,7 +58,7 @@ ul li {
   display: none;
 }
 .header__nav-col ul li {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--yr-c-divider);
 }
 .header__nav-col ul li:last-child {
   border-bottom: none;
