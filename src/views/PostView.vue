@@ -2,9 +2,9 @@
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { usePostMetaStore } from '@/stores/PostMeta'
-import Giscus from '@giscus/vue'
-import 'github-markdown-css'
+import '@/assets/markdown/github-markdown.css'
 import 'highlight.js/styles/github.css'
+import Giscus from '@giscus/vue'
 import { useTheme } from '@/utils/theme'
 
 const route = useRoute()
@@ -58,7 +58,6 @@ const { themeYori } = useTheme()
   font-size: var(--yr-fs-3);
 }
 .markdown-body {
-  font-size: 16px;
   font-family: inherit;
 }
 </style>
