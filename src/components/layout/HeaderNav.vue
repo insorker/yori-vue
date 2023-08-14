@@ -11,6 +11,7 @@ defineProps<{
 
 <style scoped>
 .nav {
+  width: 100%;
   color: inherit;
   font-size: var(--yr-fs-3);
   padding: 1rem;
