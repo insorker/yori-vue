@@ -22,6 +22,10 @@ const { themeYori } = useTheme()
       <div class="post__date">{{ meta.date }}</div>
     </div>
     <RouterView class="post__content" />
+    <a href="https://notbyai.fyi">
+      <img v-if="themeYori == 'light'" src="/Not-By-AI/Written-By-Human-Not-By-AI-Badge-white.svg" alt="Written by Human, Not by AI">
+      <img v-else src="/Not-By-AI/Written-By-Human-Not-By-AI-Badge-black.svg" alt="Written by Human, Not by AI">
+    </a>
     <Giscus
       :key="themeYori"
       repo="insorker/insorker.github.io"

@@ -20,10 +20,11 @@ defineProps<{
 <style scoped>
 .post-card {
   padding: var(--yr-fs-2) 0px;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--yr-c-divider);
 }
 .post-card__date {
   color: var(--yr-c-text-2);
+  font-size: var(--yr-fs-4);
 }
 .post-card__title {
   color: var(--yr-c-text-1);
@@ -35,8 +36,8 @@ defineProps<{
   color: var(--yr-c-brand);
 }
 .post-card__brief {
-  font-size: var(--yr-fs-5);
   color: var(--yr-c-text-2);
+  font-size: var(--yr-fs-4);
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
