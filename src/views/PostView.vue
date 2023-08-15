@@ -1,16 +1,27 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useRoute } from 'vue-router';
+import { ref } from 'vue'
+import { useRoute } from 'vue-router'
 import { usePostMetaStore } from '@/stores/PostMeta'
 import '@/assets/markdown/github-markdown.css'
 import 'highlight.js/styles/github.css'
 import Giscus from '@giscus/vue'
 import { useTheme } from '@/utils/theme'
+import { useHead } from '@unhead/vue'
 
 const route = useRoute()
 const { metaHash } = usePostMetaStore()
 const meta = ref(metaHash[route.path])
 const { themeYori } = useTheme()
+
+useHead({
+  title: meta.value.title,
+  meta: [
+    {
+      name: 'description',
+      content: meta.value.brief,
+    },
+  ],
+})
 </script>
 
 <template>

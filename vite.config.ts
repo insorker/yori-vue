@@ -24,9 +24,7 @@ export default defineConfig({
       extendRoute(route, parent) {
         const path = route.path.split('/')[1]
         // route.name 会得到类似于 'note-文件名'的name，所以要去掉'note-'
-        const name_list = route.name.split('-')
-        name_list.shift()
-        const name = name_list.join('-')
+        const name = route.name.substring(route.name.indexOf('-') + 1)
 
         if (path == 'note') {
           const file = resolve(__dirname, `docs/${path}/${name}.md`)
@@ -35,10 +33,7 @@ export default defineConfig({
             engines: { yaml: { parse, stringify, }, },
           })
 
-          return {
-            ...route,
-            meta: data
-          }
+          return { ...route, meta: data }
         }
 
         return route
