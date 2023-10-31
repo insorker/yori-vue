@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import SocialLink from '@/components/common/SocialLink.vue'
-import TheFooter from '@/components/layout/TheFooter.vue'
-import HomeNav from '@/components/home/HomeNav.vue'
 import HomeImage from '@/components/home/HomeImage.vue'
+import HomeNav from '@/components/home/HomeNav.vue'
+import TheFooter from '@/components/layout/TheFooter.vue'
+import { ref } from 'vue'
 import self from '../../docs/home/self.json'
 
 const title = ref(self.name)
@@ -20,7 +20,7 @@ const social_link = ref(self['social-link'])
   <div class="home">
     <div class="home__pane yr-flex-col yr-gap-0">
       <div class="yr-flex-col yr-gap-1">
-        <h1 class="home__pane-title">{{ title }}</h1>
+        <h1 class="home__pane-title"><span>{{ title }}</span></h1>
         <ul class="home__pane-brief yr-flex-col yr-gap-3">
           <li v-for="sentence in brief" :key="sentence.id">{{ sentence.text }}</li>
           <li>
@@ -47,9 +47,7 @@ const social_link = ref(self['social-link'])
 
 <style scoped>
 .home {
-  position: relative;
   display: flex;
-  height: 100vh;
 }
 .home__pane {
   flex: 0 0 auto;
@@ -62,16 +60,24 @@ const social_link = ref(self['social-link'])
   box-shadow: 16px 0px 24px 0px rgba(0, 0, 0, 25%);
 }
 .home__pane-title {
+  text-align: center;
   margin-bottom: 0px;
   font-size: var(--yr-fs-1);
 }
+.home__pane-title span {
+  background: linear-gradient(90deg, #6818aa, #0d67bb);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
 .home__pane-brief {
+  text-align: center;
   color: var(--yr-c-text-2);
 }
 .home__pane-link {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: center;
 }
 .home__pane-link > * {
   margin-right: 1rem;
