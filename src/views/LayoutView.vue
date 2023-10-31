@@ -2,8 +2,8 @@
 /**
  * 整个页面的布局
  */
-import TheHeader from '@/components/layout/TheHeader.vue';
 import TheFooter from '@/components/layout/TheFooter.vue';
+import TheHeader from '@/components/layout/TheHeader.vue';
 </script>
 
 <template>
@@ -25,10 +25,10 @@ import TheFooter from '@/components/layout/TheFooter.vue';
   top: 0px;
   left: 0px;
   right: 0px;
-  height: 3.25rem;
+  height: 4rem;
 }
 .content {
-  padding: 3.25rem 1.5rem 0 1.5rem;
+  padding: 4rem 1.5rem 0 1.5rem;
 }
 .spacer {
   flex: 1;

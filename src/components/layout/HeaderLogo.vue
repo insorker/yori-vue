@@ -1,12 +1,14 @@
 <script setup lang="ts">
 defineProps<{
-  name: string
-  path: string
+  title: string
+  brief: string
+  to: string
 }>()
 </script>
 
 <template>
-  <RouterLink class="nav" :to="path">{{ name }}</RouterLink>
+  <RouterLink class="nav" :to="to">{{ title }}</RouterLink>
+  <div class="nav-brief">{{ brief }}</div>
 </template>
 
 <style scoped>
@@ -16,6 +18,11 @@ defineProps<{
   white-space: nowrap;
   text-decoration: none;
   transition: color 0.5s;
+}
+.nav-brief {
+  color: var(--yr-c-text-2);
+  font-size: var(--yr-fs-3);
+  padding: 0rem 1rem;
 }
 .nav:hover {
   color: var(--yr-c-brand);

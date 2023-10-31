@@ -12,9 +12,9 @@ defineProps<{
 <style scoped>
 .nav {
   width: 100%;
+  padding: 1rem;
   color: inherit;
   font-size: var(--yr-fs-3);
-  padding: 1rem;
   white-space: nowrap;
   text-decoration: none;
   transition: color 0.5s;

@@ -3,7 +3,14 @@ import HeaderLogo from './HeaderLogo.vue'
 import HeaderNav from './HeaderNav.vue'
 import HeaderMenu from './HeaderMenu.vue'
 import HeaderSwitch from './ HeaderSwitch.vue'
-import { ref } from 'vue'
+import { ref, watch, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const logoBrief = ref<string>(route.path)
+watch(() => route.path, (toParams) => {
+  logoBrief.value = toParams
+})
 
 const navItems = ref([
   { name: 'Project', path: '/project' },
@@ -15,7 +22,7 @@ const navItems = ref([
 <template>
   <header class="header">
     <nav class="header__nav-left">
-      <HeaderLogo name="Insorker" path="/" />
+      <HeaderLogo title="Insorker" :brief="logoBrief" to="/" />
     </nav>
     <nav class="header__nav-right">
       <div class="header__nav-row">
