@@ -3,7 +3,7 @@ import HeaderLogo from './HeaderLogo.vue'
 import HeaderNav from './HeaderNav.vue'
 import HeaderMenu from './HeaderMenu.vue'
 import HeaderSwitch from './ HeaderSwitch.vue'
-import { ref, watch, onMounted } from 'vue'
+import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -13,9 +13,9 @@ watch(() => route.path, (toParams) => {
 })
 
 const navItems = ref([
-  { name: 'Project', path: '/project' },
-  { name: 'Note', path: '/note' },
-  { name: 'About', path: '/about' },
+  { id: 1, name: 'Project', path: '/project' },
+  { id: 2, name: 'Note', path: '/note' },
+  { id: 3, name: 'About', path: '/about' },
 ])
 </script>
 
@@ -27,7 +27,7 @@ const navItems = ref([
     <nav class="header__nav-right">
       <div class="header__nav-row">
         <ul class="yr-flex-row yr-gap-0">
-          <li v-for="item in navItems"><HeaderNav :name="item.name" :path="item.path" /></li>
+          <li v-for="item in navItems" :key="item.id"><HeaderNav :name="item.name" :path="item.path" /></li>
           <li class="header__nav-switch">
             <HeaderSwitch />
           </li>
@@ -35,7 +35,7 @@ const navItems = ref([
       </div>
       <HeaderMenu class="header__nav-col">
         <ul class="yr-flex-col yr-gap-0">
-          <li v-for="item in navItems"><HeaderNav :name="item.name" :path="item.path" /></li>
+          <li v-for="item in navItems" :key="item.id"><HeaderNav :name="item.name" :path="item.path" /></li>
           <li class="header__nav-switch">
             <HeaderSwitch />
           </li>

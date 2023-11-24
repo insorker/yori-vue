@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useTheme, switchTheme } from '@/utils/theme'
 
 const { themeState } = useTheme()

@@ -4,7 +4,7 @@ import { routes } from './router'
 import { createPinia } from 'pinia'
 import { createHead } from '@unhead/vue'
 
-import './assets/yori.css'
+import './assets/yori.scss'
 
 export const createApp = ViteSSG(
   App,

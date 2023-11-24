@@ -38,6 +38,11 @@
   --yr-v-gap: var(--yr-fs-5);
 }
 
+.yr-fc-0 {
+  @extend .yr-flex-col;
+  @extend .yr-gap-0;
+}
+
 .yr-img {
   width: 100%;
 }
