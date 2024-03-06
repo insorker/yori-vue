@@ -4,16 +4,11 @@ import HomeImage from '@/components/home/HomeImage.vue'
 import HomeNav from '@/components/home/HomeNav.vue'
 import TheFooter from '@/components/layout/TheFooter.vue'
 import { ref } from 'vue'
-import self from '../../docs/home/self.json'
+import config from '../../docs/home/config.json'
 
-const title = ref(self.name)
-const brief = ref<{ id: string, text: string }[]>([])
-for (let idx in self.brief) {
-  brief.value.push({
-    id: idx, text: self.brief[idx]
-  })
-}
-const social_link = ref(self['social-link'])
+const title = ref(config['title'])
+const brief = ref(config['brief'])
+const social_link = ref(config['social-link'])
 </script>
 
 <template>
@@ -22,14 +17,8 @@ const social_link = ref(self['social-link'])
       <div class="yr-flex-col yr-gap-1">
         <h1 class="title"><span>{{ title }}</span></h1>
         <ul class="brief yr-flex-col yr-gap-3">
-          <li v-for="sentence in brief" :key="sentence.id">{{ sentence.text }}</li>
-          <li>
-            <ul class="social-link">
-              <li><SocialLink icon="github" font="github" :url="social_link.github"></SocialLink></li>
-              <li><SocialLink icon="bilibili" font="bilibili" :url="social_link.bilibili"></SocialLink></li>
-              <!-- <li><SocialLink icon="zhihu" url="https://www.zhihu.com/people/zhu-xing-da-15"></SocialLink></li> -->
-            </ul>
-          </li>
+          <li v-for="(value, idx) in brief" :key="idx">{{ value }}</li>
+          <li><ul class="social-link"><li v-for="(value, key, idx) in social_link" :key="idx"><SocialLink :icon="key" :url="value" /></li></ul></li>
         </ul>
         <ul class="yr-flex-col yr-gap-4">
           <li><HomeNav name="Project" path="project"></HomeNav></li>

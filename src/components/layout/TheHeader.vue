@@ -21,7 +21,7 @@ const navItems = ref([
 
 <template>
   <header class="header">
-    <nav class="header__nav-left">
+    <nav class="nav-left">
       <HeaderLogo title="Insorker" :brief="logoBrief" to="/" />
     </nav>
     <nav class="header__nav-right">
@@ -50,7 +50,7 @@ const navItems = ref([
 ul li {
   display: flex;
 }
-.header {
+header {
   display: flex;
   align-items: center;
   padding: 0 1.5rem 0 2.5rem;
@@ -59,7 +59,7 @@ ul li {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
-.header__nav-left {
+.nav-left {
   flex: 1 0 auto;
   /* flex 需要子元素去撑高度，如果 flex 的子元素没有高度，那么他就没去找子元素是 flex 的高度。所以这里添加了 display: flex */
   display: flex;
@@ -82,7 +82,7 @@ ul li {
   align-items: center;
 }
 @media (max-width: 640px) {
-  .header {
+  header {
     padding: 0 1.5rem;
   }
   .header__nav-row {

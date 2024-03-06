@@ -1,5 +1,5 @@
 {
-  "name": "insorker.site",
+  "title": "insorker.site",
   "brief": [
     "Hi, this is insorker, a student who likes programming.",
     "Besides, I like video games, go, origami, pixel art, harmonica, whistle... Just for enjoyment and not professional. Maybe we can play together.",
@@ -7,6 +7,7 @@
   ],
   "social-link": {
     "github": "https://github.com/insorker",
-    "bilibili": "https://space.bilibili.com/434618849"
+    "bilibili": "https://space.bilibili.com/434618849",
+    "zhihu": "https://www.zhihu.com/people/zhu-xing-da-15"
   }
 }

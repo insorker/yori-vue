@@ -17,7 +17,7 @@ export const usePostMetaStore = defineStore('post-meta', () => {
   const metaArray = ref<MetaArrayItem[]>([])
   const metaHash = ref<MetaHash>({})
 
-  for (let item of <any>VPRoutes) {
+  for (const item of <any>VPRoutes) {
     metaArray.value.push({
       path: item.path,
       meta: item.meta
