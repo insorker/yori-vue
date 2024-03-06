@@ -28,4 +28,9 @@ defineProps<{
   color: var(--yr-c-brand);
   cursor: pointer;
 }
+@media (max-width: 640px) {
+  .nav-brief {
+    display: none;
+  }
+}
 </style>
