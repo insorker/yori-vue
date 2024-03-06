@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <RouterLink class="nav" :to="to">{{ title }}</RouterLink>
-  <div class="nav-brief">{{ brief }}</div>
+  <div class="nav-brief">{{ '~' + brief }}</div>
 </template>
 
 <style scoped>

@@ -12,7 +12,7 @@ const projects = ref(repo.split('\n'))
     <div class="list__spacer"></div>
     <AvatarHeader title="project" />
     <div class="project__content">
-      <GhCard v-for="item in projects" :repo="item" />
+      <GhCard v-for="(item, idx) in projects" :key="idx" :repo="item" />
     </div>
   </div>
 </template>

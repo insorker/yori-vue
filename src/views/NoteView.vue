@@ -14,7 +14,7 @@ const { metaArray } = usePostMetaStore()
     </template>
     <template v-slot:content>
       <div class="note__content yr-flex-col yr-gap-0">
-        <NoteCard v-for="item in metaArray" :to="item.path" :meta="item.meta" />
+        <NoteCard v-for="(item, idx) in metaArray" :key="idx" :to="item.path" :meta="item.meta" />
       </div>
     </template>
   </ListLayout>

@@ -24,7 +24,7 @@ export function useTheme() {
     }
   }
   catch {
-
+    console.log('theme error')
   }
   
   return { themeState, themeYori }
@@ -37,17 +37,17 @@ export function switchTheme() {
     if (htmlELement.classList.contains('light')) {
       htmlELement.classList.remove('light')
       htmlELement.classList.add('dark')
-      themeState.value = false
+      themeState.value = true
       themeYori.value = 'dark'
     }
     else {
       htmlELement.classList.remove('dark')
       htmlELement.classList.add('light')
-      themeState.value = true
+      themeState.value = false
       themeYori.value = 'light'
     }
   }
   catch {
-
+    console.log('theme error')
   }
 }
