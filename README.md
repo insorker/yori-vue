@@ -21,7 +21,7 @@ A static blog generator, based on Vue, inherits from Yori.
   <img width="45%" src="./readme-img/home-page-dark.png" />
 </p>
 
-Another tiny static blog generator, Hahaha. The predecessor of the yori-vue project is [yori](https://github.com/insorker/yori), so their goals are aligned:
+Another tiny static blog generator, hahaha. The predecessor of the yori-vue project is [yori](https://github.com/insorker/yori), so their goals are aligned:
 
 <p align="center">
   <b><i>Aim to help you break free from modern, convenient but resource-heavy tools.</b></i>
@@ -33,7 +33,7 @@ PS: The detailed implementation approach is documented in [this article (还没�
 
 ## Install
 
-> There is no guarantee that the latest version is the final version, but it may be the stable version.
+> There is no guarantee that the latest version is the final version, but it may be a stable version.
 > 
 > The project is currently in development stage and will be released on npm after development is completed.
 
@@ -43,17 +43,21 @@ Git clone this repository and run `npm install`.
 
 Configure and create content in the 'docs' folder.
 
-Run `npm run dev` to test.
+Run `npm run dev` to preview.
 
 Run `npm run build` to build. The output will be placed in the 'dist' folder.
 
-### home
+### public
 
-> Write self-introduction in the file 'home/self.json'.
+> Change images in the directory 'public/'
+
+### docs/home
+
+> Write self-introduction in the file 'home/config.json'.
 
 Replace the personal information in this file. More configurable options will be added later.
 
-### note
+### docs/note
 
 > Put markdown files in the directory 'note/'.
 
@@ -68,11 +72,11 @@ image?: Image Url
 
 "?" is not part of the configuration, it indicates that the option can be left blank. Replace 'YYYY-MM-DD' with the date you created or last modified the file.
 
-### project
+### docs/project
 
 > Write repositories' infomation in the file 'project/repo.txt'.
 
-The format is as follows: username/repository name. And separate each entry by a new line.
+The format is as follows: `username/repository name`. And separate each entry by a new line.
 
 ## License
 

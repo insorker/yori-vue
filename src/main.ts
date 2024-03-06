@@ -15,6 +15,5 @@ export const createApp = ViteSSG(
 
     app.use(pinia)
     app.use(head)
-    app.component("")
   },
 )
