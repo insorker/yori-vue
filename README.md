@@ -78,6 +78,14 @@ image?: Image Url
 
 The format is as follows: `username/repository name`. And separate each entry by a new line.
 
+## Deploy
+
+> Need more development in future.
+
+`git clone` and change the `docs` folder.
+
+Push the `dist` folder to your github page.
+
 ## License
 
 [MIT](LICENSE) License © 2023-Present [insorker](https://github.com/insorker)
