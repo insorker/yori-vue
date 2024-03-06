@@ -9,7 +9,7 @@ defineProps<{
 
 <template>
   <a :href="`https://github.com/${repo}`">
-    <img :src="`https://gh-card.dev/repos/${repo}.svg`" :class="{ 'img-dark': themeState }"/>
+    <img :src="`https://gh-card.dev/repos/${repo}.svg`" />
   </a>
 </template>
 
@@ -20,9 +20,6 @@ a {
 img {
   display: block;
   max-width: 100%;
-  filter: invert(0);
-}
-.img-dark {
-  filter: invert(1);
+  filter: invert(v-bind('themeState == false ? 0 : 1'));
 }
 </style>
