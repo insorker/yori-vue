@@ -24,7 +24,8 @@ export function useTheme() {
     }
   }
   catch {
-    console.log('theme error')
+    // console.log('theme error')
+    return
   }
   
   return { themeState, themeYori }
@@ -48,6 +49,7 @@ export function switchTheme() {
     }
   }
   catch {
-    console.log('theme error')
+    // console.log('theme error')
+    return
   }
 }
