@@ -9,6 +9,7 @@ import config from '../../docs/home/config.json'
 const title = ref(config['title'])
 const brief = ref(config['brief'])
 const social_link = ref(config['social-link'])
+const image_offset = ref(config['image-offset'])
 </script>
 
 <template>
@@ -29,7 +30,7 @@ const social_link = ref(config['social-link'])
       <TheFooter />
     </div>
     <div class="sidebar-container">
-      <HomeImage />
+      <HomeImage :offset="image_offset"/>
     </div>
   </main>
 </template>

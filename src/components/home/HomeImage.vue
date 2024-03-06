@@ -1,3 +1,9 @@
+<script setup lang="ts">
+defineProps<{
+  offset: string
+}>()
+</script>
+
 <template>
   <div class="wrapper">
     <img src="/background.png">
@@ -16,6 +22,6 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(v-bind(offset)) translateY(-50%);
 }
 </style>

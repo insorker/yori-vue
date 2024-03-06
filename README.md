@@ -55,7 +55,18 @@ Run `npm run build` to build. The output will be placed in the 'dist' folder.
 
 > Write self-introduction in the file 'home/config.json'.
 
-Replace the personal information in this file. More configurable options will be added later.
+```json
+{
+  "title": String,
+  "brief": [String],
+  "social-link": {
+    "github": String,
+    "bilibili": String,
+    "zhihu": String
+  },
+  "image-offset": String between "-0%" and "-100%"
+}
+```
 
 ### docs/note
 
@@ -63,7 +74,7 @@ Replace the personal information in this file. More configurable options will be
 
 Markdown files need to have a YAML front matter. The front matter should follow the following configuration:
 
-```
+```yml
 title: Your Title Here
 date: YYYY-MM-DD
 brief: Your Brief Here
