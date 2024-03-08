@@ -22,7 +22,6 @@ useHead({
     },
   ],
 })
-console.log(meta.value.not_by_ai)
 </script>
 
 <template>
