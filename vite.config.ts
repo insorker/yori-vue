@@ -115,7 +115,7 @@ export default defineConfig({
       dirs: [
         { dir: 'docs/note', baseRoute: 'note' },
       ],
-      extendRoute(route, parent) {
+      extendRoute(route) {
         const path = route.path.split('/')[1]
         // route.name 会得到类似于 'note-文件名'的name，所以要去掉'note-'
         const name = route.name.substring(route.name.indexOf('-') + 1)
