@@ -57,6 +57,7 @@ useHead({
 </template>
 
 <style scoped>
+@import url('https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css');
 .post {
   width: 100%;
   max-width: 720px;

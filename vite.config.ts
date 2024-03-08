@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import Markdown from 'vite-plugin-md'
+import { katex } from "@mdit/plugin-katex"
 import hljs from 'highlight.js/lib/common'
 import fs from 'fs'
 import { resolve } from "path"
@@ -55,6 +56,10 @@ export default defineConfig({
       
           return ''; // use external default escaping
         }
+      },
+      markdownItSetup(md) {
+        // https://mdit-plugins.github.io/zh/katex.html
+        md.use(katex)
       },
     }),
   ],
