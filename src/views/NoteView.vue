@@ -3,14 +3,17 @@ import ListLayout from '@/components/common/ListLayout.vue';
 import NoteCard from '@/components/note/NoteCard.vue'
 import NotePlayground from '@/components/note/NotePlayground.vue'
 import { usePostMetaStore } from '@/stores/PostMeta'
+import { ref } from 'vue'
+import config from '../../docs/note/config.json'
 
 const { metaArray } = usePostMetaStore()
+const playground_image = ref(config['playground-image'])
 </script>
 
 <template>
   <ListLayout title="note">
     <template v-slot:playground>
-      <NotePlayground />
+      <NotePlayground :image="playground_image" />
     </template>
     <template v-slot:content>
       <div class="note__content yr-flex-col yr-gap-0">

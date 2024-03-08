@@ -1,6 +1,11 @@
+<script setup lang="ts">
+defineProps<{
+  image: string
+}>()
+</script>
 <template>
   <div class="yr-img">
-    <img src="/note_playground.gif" />
+    <img :src="image" />
   </div>
 </template>
 

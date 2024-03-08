@@ -49,28 +49,39 @@ Run `npm run build` to build. The output will be placed in the 'dist' folder.
 
 ### public
 
-> Change images in the directory 'public/'
+> Change avator in the directory 'public/'
 
 ### docs/home
 
-> Write self-introduction in the file 'home/config.json'.
+> Config in the file 'home/config.json'.
 
 ```json
 {
-  "title": String,
-  "brief": [String],
+  "title": "title",
+  "brief": ["array of sentences"],
   "social-link": {
-    "github": String,
-    "bilibili": String,
-    "zhihu": String
+    "github": "url",
+    "bilibili": "url",
+    "zhihu": "url"
   },
-  "image-offset": String between "-0%" and "-100%"
+  "image-url": "url",
+  "image-offset": "-0% <= string <= -100%"
 }
 ```
 
 ### docs/note
 
+> Config in the file 'note/config.json'.
+> 
 > Put markdown files in the directory 'note/'.
+
+In 'config.json'.
+
+```json
+{
+  "playground-image": "url"
+}
+```
 
 Markdown files need to have a YAML front matter. The front matter should follow the following configuration:
 

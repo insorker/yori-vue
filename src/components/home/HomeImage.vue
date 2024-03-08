@@ -1,12 +1,13 @@
 <script setup lang="ts">
 defineProps<{
+  url: string,
   offset: string
 }>()
 </script>
 
 <template>
   <div class="wrapper">
-    <img src="/background.png">
+    <img :src="url">
   </div>
 </template>
 
