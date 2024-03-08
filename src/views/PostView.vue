@@ -22,18 +22,19 @@ useHead({
     },
   ],
 })
+console.log(meta.value.not_by_ai)
 </script>
 
 <template>
   <div class="post yr-flex-col yr-gap-1">
     <div class="post__spacer"></div>
     <div class="post__header yr-flex-col yr-gap-5">
-      <div  class="yr-img" v-if="meta.image"><img :src="meta.image" /></div>
+      <div v-if="meta.image" class="yr-img"><img :src="meta.image" /></div>
       <h1 class="post__title">{{ meta.title }}</h1>
       <div class="post__date">{{ meta.date }}</div>
     </div>
     <RouterView class="post__content" />
-    <a href="https://notbyai.fyi">
+    <a v-if="!('notbyai' in meta) || meta.notbyai" href="https://notbyai.fyi">
       <img v-if="themeYori == 'light'" src="/Not-By-AI/Written-By-Human-Not-By-AI-Badge-white.svg" alt="Written by Human, Not by AI">
       <img v-else src="/Not-By-AI/Written-By-Human-Not-By-AI-Badge-black.svg" alt="Written by Human, Not by AI">
     </a>

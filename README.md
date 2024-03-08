@@ -89,7 +89,8 @@ Markdown files need to have a YAML front matter. The front matter should follow 
 title: Your Title Here
 date: YYYY-MM-DD
 brief: Your Brief Here
-image?: Image Url
+image?: Image Url (default "")
+notbyai?: boolean (default true)
 ```
 
 "?" is not part of the configuration, it indicates that the option can be left blank. Replace 'YYYY-MM-DD' with the date you created or last modified the file.
