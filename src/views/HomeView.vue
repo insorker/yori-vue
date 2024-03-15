@@ -45,7 +45,7 @@ main {
   position: relative;
   width: 55%;
   min-height: 100vh;
-  padding: 0px 10%;
+  padding: 8vh 10% 0vh;
   z-index: 10;
   background: var(--yr-c-bg);
   box-shadow: 16px 0px 24px 0px rgba(0, 0, 0, 25%);
