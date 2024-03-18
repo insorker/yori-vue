@@ -24,19 +24,19 @@ const { themeState } = useTheme()
   height: 100%;
   position: relative;
   align-items: center;
-  padding: var(--yr-fs-4);
+  padding: var(--yr-fs-2);
 }
 .switch__checkbox {
   position: absolute;
 }
 .switch__button {
-  --yr-switch-height: calc(var(--yr-fs-3));
+  --yr-switch-height: calc(var(--yr-fs-6));
 
   width: calc(2 * var(--yr-switch-height));
   height: var(--yr-switch-height);
   display: block;
   position: relative;
-  background-color: var(--yr-c-bg-soft);
+  background-color: var(--yr-c-bg-mute);
   border-radius: var(--yr-switch-height);
   border: 1px solid var(--yr-c-divider);
   cursor: pointer;

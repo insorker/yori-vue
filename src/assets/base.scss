@@ -1,9 +1,11 @@
 :root {
   --yr-c-white: #ffffff;
   --yr-c-white-soft: #f4f4f4;
+  --yr-c-white-mute: #d9d9d9;
   --yr-c-white-blur: rgba(255, 255, 255, 0.8);
   --yr-c-black: #242424;
   --yr-c-black-soft: #3d3d3d;
+  --yr-c-black-mute: #4e4e4e;
   --yr-c-black-blur: rgba(36, 36, 36, 0.8);
   --yr-c-gray-light-1: hsl(0, 0%, 94%);
   --yr-c-gray-light-2: hsl(0, 0%, 90%);
@@ -29,6 +31,7 @@
 .light {
   --yr-c-bg: var(--yr-c-white);
   --yr-c-bg-soft: var(--yr-c-white-soft);
+  --yr-c-bg-mute: var(--yr-c-white-mute);
   --yr-c-bg-blur: var(--yr-c-white-blur);
   --yr-c-gray-1: var(--yr-c-gray-light-1);
   --yr-c-gray-2: var(--yr-c-gray-light-2);
@@ -45,6 +48,7 @@
 .dark {
   --yr-c-bg: var(--yr-c-black);
   --yr-c-bg-soft: var(--yr-c-black-soft);
+  --yr-c-bg-mute: var(--yr-c-black-mute);
   --yr-c-bg-blur: var(--yr-c-black-blur);
   --yr-c-gray-1: var(--yr-c-gray-dark-1);
   --yr-c-gray-2: var(--yr-c-gray-dark-2);

@@ -37,7 +37,7 @@ const navItems = ref([
         </li>
       </ul>
       <HeaderMenu class="nav-right-col">
-        <ul class="yr-flex-col yr-gap-0">
+        <ul class="yr-flex-col-0">
           <li v-for="item in navItems" :key="item.id">
             <HeaderNav :name="item.name" :path="item.path" />
           </li>
@@ -74,6 +74,7 @@ header {
   align-items: center;
 }
 .nav-right-col ul li {
+  padding: 0.5rem;
   border-bottom: 1px solid var(--yr-c-divider);
 }
 .nav-right-col ul li:last-child {

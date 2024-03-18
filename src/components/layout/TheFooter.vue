@@ -6,7 +6,7 @@
 
 <style scoped>
 footer {
-  padding: 3rem;
+  padding: 1.5rem;
   text-align: center;
   color: var(--yr-c-text-2);
 }

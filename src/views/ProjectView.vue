@@ -6,7 +6,7 @@ import projects from '../../docs/projects/config.json'
 
 <template>
   <div class="project yr-flex-col-16">
-    <AvatarHeader title="project" />
+    <AvatarHeader title="projects" />
     <div class="list">
       <ProjectCard v-for="(item, idx) in projects" :key="idx" :meta="item" />
     </div>

@@ -1,10 +1,6 @@
-<script setup lang="ts">
-import UserCard from '@/components/common/UserCard.vue'
-</script>
-
 <template>
   <div class="about">
-    To be built ...
+    你似乎来到了没有知识存在的荒原···
     <!-- <UserCard /> -->
   </div>
 </template>

@@ -10,10 +10,10 @@ const { metaPostsTable } = useMetaPostsTableStore()
     <AvatarHeader title="posts" />
     <div class="year-container left yr-flex-col-0">
       <div v-for="(i, year, idx) in metaPostsTable" :key="idx" class="left yr-flex-row-4">
-        <div class="yr-h2">{{ String(-year).padStart(4, ' ') }}</div>
+        <div class="yr-h3">{{ String(-year).padStart(4, ' ') }}</div>
         <div class="month-container left yr-flex-col-4">
           <div v-for="(j, month, idx) in i" :key="idx" class="left yr-flex-row-4">
-            <div class="yr-h2">{{ String(-month).padStart(2, '0') }}</div>
+            <div class="yr-h3">{{ String(-month).padStart(2, '0') }}</div>
             <div class="posts-container left yr-flex-col-0">
               <div v-for="(item, idx) in j" :key="idx">
                 <RouterLink class="yr-h2" :to="item.path">{{ item.meta.title }}</RouterLink>
@@ -39,7 +39,7 @@ const { metaPostsTable } = useMetaPostsTableStore()
 }
 .month-container,
 .posts-container > * {
-  padding: 0.5rem;
+  padding: 0.25rem;
 }
 .month-container > *,
 .posts-container > * {
@@ -47,5 +47,11 @@ const { metaPostsTable } = useMetaPostsTableStore()
 }
 .posts-container > *:last-child {
   border-bottom: none;
+}
+@media (min-width: 1024px) {
+  .month-container,
+  .posts-container > * {
+    padding: 0.5rem;
+  }
 }
 </style>

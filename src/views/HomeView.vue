@@ -52,7 +52,7 @@ main {
   flex: 1 1 auto;
   max-width: 48rem;
   margin: 0rem auto;
-  padding: 12vh 1.5rem 0vh;
+  padding: 12vh 1.5rem 2vh;
 }
 
 @media (min-width: 1024px) {
