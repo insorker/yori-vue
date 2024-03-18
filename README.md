@@ -8,7 +8,7 @@ A static blog generator, based on Vue, inherits from Yori.
 
 <p align="center">
   <a href="https://github.com/insorker/yori-vue">
-    <img src="https://img.shields.io/badge/version-0.2.0-blue.svg" />
+    <img src="https://img.shields.io/badge/version-0.3.0-blue.svg" />
   </a>
 </p>
 
@@ -57,31 +57,25 @@ Run `npm run build` to build. The output will be placed in the 'dist' folder.
 
 ```json
 {
+  "html-title": "title",
   "title": "title",
-  "brief": ["array of sentences"],
+  "profile": ["array of sentences"],
   "social-link": {
-    "github": "url",
-    "bilibili": "url",
-    "zhihu": "url"
+    "social-link-icon": "",
+    "e.g. ri-github-fill": "url",
+    "e.g. ri-bilibili-fill": "url",
+    "e.g. ri-zhihu-line": "url"
   },
-  "image-url": "url",
+  "image-link": "url",
   "image-offset": "-0% <= string <= -100%"
 }
 ```
 
-### docs/note
+Find your social link icons on https://remixicon.com/.
 
-> Config in the file 'note/config.json'.
-> 
+### docs/posts
+
 > Put markdown files in the directory 'note/'.
-
-In 'config.json'.
-
-```json
-{
-  "playground-image": "url"
-}
-```
 
 Markdown files need to have a YAML front matter. The front matter should follow the following configuration:
 
@@ -95,11 +89,28 @@ notbyai?: boolean (default true)
 
 "?" is not part of the configuration, it indicates that the option can be left blank. Replace 'YYYY-MM-DD' with the date you created or last modified the file.
 
-### docs/project
+### docs/projects
 
-> Write repositories' infomation in the file 'project/repo.txt'.
+> Write repositories' infomation in the file 'projects/config.json'.
 
-The format is as follows: `username/repository name`. And separate each entry by a new line.
+The format is as follows:
+
+```yml
+[
+  {
+    "name": "",
+    "desc": "",
+    "link": "",
+    "icon": ""
+  },
+  {
+    ...
+  },
+  ...
+]
+```
+
+Find your project icons on https://icon-sets.iconify.design/.
 
 ## Deploy
 
