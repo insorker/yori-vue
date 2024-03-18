@@ -2,12 +2,10 @@
 import { ref } from 'vue'
 
 const tagColor = ref({
-  'red': ''
+  red: ''
 })
 </script>
 
 <template>
-  <span class="">
-
-  </span>
+  <span class=""> </span>
 </template>

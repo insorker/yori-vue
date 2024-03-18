@@ -1,46 +1,49 @@
-@import './base.css';
+@import './base.scss';
 
-.yr-flex-row {
+.yr-flex {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   gap: var(--yr-v-gap);
+}
+
+.yr-flex-row {
+  @extend .yr-flex;
+  flex-direction: row;
 }
 
 .yr-flex-col {
-  display: flex;
+  @extend .yr-flex;
   flex-direction: column;
-  justify-content: center;
-  gap: var(--yr-v-gap);
 }
 
-.yr-gap-0 {
-  --yr-v-gap: 0px;
+@for $i from 0 through 32 {
+  .yr-flex-row-#{$i} {
+    @extend .yr-flex-row;
+    --yr-v-gap: var(--yr-fs-#{$i});
+  }
+  .yr-flex-col-#{$i} {
+    @extend .yr-flex-col;
+    --yr-v-gap: var(--yr-fs-#{$i});
+  }
 }
 
-.yr-gap-1 {
-  --yr-v-gap: var(--yr-fs-1);
+@for $i from 1 through 3 {
+  .yr-h#{$i} {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+  }
 }
 
-.yr-gap-2 {
-  --yr-v-gap: var(--yr-fs-2);
+.yr-h1 {
+  font-size: 3rem;
 }
 
-.yr-gap-3 {
-  --yr-v-gap: var(--yr-fs-3);
+.yr-h2 {
+  font-size: 1.5rem;
 }
 
-.yr-gap-4 {
-  --yr-v-gap: var(--yr-fs-4);
-}
-
-.yr-gap-5 {
-  --yr-v-gap: var(--yr-fs-5);
-}
-
-.yr-fc-0 {
-  @extend .yr-flex-col;
-  @extend .yr-gap-0;
+.yr-h3 {
+  font-size: 1.125rem;
 }
 
 .yr-img {

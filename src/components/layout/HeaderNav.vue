@@ -11,16 +11,6 @@ defineProps<{
 
 <style scoped>
 .nav {
-  width: 100%;
-  padding: 1rem;
-  color: inherit;
-  font-size: var(--yr-fs-3);
-  white-space: nowrap;
-  text-decoration: none;
-  transition: color 0.5s;
-}
-.nav:hover {
-  color: var(--yr-c-brand);
-  cursor: pointer;
+  padding: 0.75rem;
 }
 </style>

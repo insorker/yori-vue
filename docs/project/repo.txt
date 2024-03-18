@@ -1,2 +1,0 @@
-insorker/insorker.github.io
-insorker/yori-vue

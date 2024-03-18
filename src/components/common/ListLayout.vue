@@ -9,7 +9,7 @@ defineProps<{
 <template>
   <div class="list">
     <div class="list__spacer"></div>
-    <div class="list__header yr-flex-col yr-gap-0">
+    <div class="list__header yr-flex-col-0">
       <AvatarHeader class="list__header-title" title="note" />
       <div class="list__header-playground"><slot name="playground" /></div>
     </div>
@@ -51,7 +51,7 @@ defineProps<{
 
   .list__header-playground {
     display: block;
-    aspect-ratio : 1 / 1;
+    aspect-ratio: 1 / 1;
     width: 100%;
   }
 

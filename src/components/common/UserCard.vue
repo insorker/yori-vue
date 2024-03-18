@@ -3,9 +3,7 @@
     <img class="user-card__avatar" />
     <div class="user-card__content">
       <div>insorker</div>
-      <div>
-
-      </div>
+      <div></div>
     </div>
   </div>
 </template>

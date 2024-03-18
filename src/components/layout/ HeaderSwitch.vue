@@ -6,7 +6,14 @@ const { themeState } = useTheme()
 
 <template>
   <div class="switch">
-    <keep-alive><input class="switch__checkbox" type="checkbox" id="yr-id-switch-theme" v-model="themeState" @change="switchTheme"/></keep-alive>
+    <keep-alive
+      ><input
+        class="switch__checkbox"
+        type="checkbox"
+        id="yr-id-switch-theme"
+        v-model="themeState"
+        @change="switchTheme"
+    /></keep-alive>
     <label for="yr-id-switch-theme" class="switch__button"></label>
   </div>
 </template>
@@ -15,7 +22,7 @@ const { themeState } = useTheme()
 .switch {
   width: 100%;
   height: 100%;
-  position:relative;
+  position: relative;
   align-items: center;
   padding: var(--yr-fs-4);
 }
@@ -36,7 +43,7 @@ const { themeState } = useTheme()
   transition: 0.3s;
 }
 .switch__button::after {
-  content: "";
+  content: '';
   width: calc(var(--yr-switch-height) * 0.7);
   height: calc(var(--yr-switch-height) * 0.7);
   position: absolute;

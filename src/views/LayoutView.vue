@@ -1,15 +1,12 @@
 <script setup lang="ts">
-/**
- * 整个页面的布局
- */
-import TheFooter from '@/components/layout/TheFooter.vue';
-import TheHeader from '@/components/layout/TheHeader.vue';
+import TheHeader from '@/components/layout/TheHeader.vue'
+import TheFooter from '@/components/layout/TheFooter.vue'
 </script>
 
 <template>
-  <div class="page yr-flex-col yr-gap-0">
+  <div class="page yr-flex-col-0">
     <TheHeader class="header" />
-    <RouterView class="content" />
+    <main class="container"><RouterView /></main>
     <div class="spacer"></div>
     <TheFooter />
   </div>
@@ -18,19 +15,26 @@ import TheHeader from '@/components/layout/TheHeader.vue';
 <style scoped>
 .page {
   min-height: 100vh;
-  align-items: center;
 }
 .header {
   position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
-  height: 4rem;
+  height: var(--yr-pd-top);
 }
-.content {
-  padding: 4rem 1.5rem 0 1.5rem;
+.container {
+  margin: var(--yr-pd-top) auto 0rem;
+  padding: 0rem var(--yr-pd-side);
+  width: 100%;
+  max-width: var(--yr-main-width);
 }
 .spacer {
   flex: 1;
+}
+@media (min-width: 1024px) {
+  .container {
+    padding: 0rem 0rem;
+  }
 }
 </style>

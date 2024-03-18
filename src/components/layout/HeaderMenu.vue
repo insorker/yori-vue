@@ -7,9 +7,20 @@ const fold = ref(true)
 <template>
   <div class="dropdown">
     <div class="dropdown__button" @click="fold = !fold">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        aria-hidden="true"
+        role="img"
+        width="32"
+        height="32"
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 32 32"
+      >
+        <path d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path>
+      </svg>
     </div>
-    <div :class="[ 'dropdown__content', { 'dropdown__unfold': !fold } ]" @click="fold = true">
+    <div :class="['dropdown__content', { dropdown__unfold: !fold }]" @click="fold = true">
       <div class="dropdown__list">
         <slot />
       </div>
@@ -52,9 +63,9 @@ const fold = ref(true)
   z-index: 10;
   transform: scaleY(0);
   transform-origin: top;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   transition-property: transform;
-  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .dropdown__unfold .dropdown__list {
   transform: scaleY(1);

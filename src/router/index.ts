@@ -8,18 +8,18 @@ export const routes = [
   },
   {
     path: '/',
-    name: 'page',
+    name: 'layout',
     component: () => import('@/views/LayoutView.vue'),
     children: [
       {
-        path: 'project',
-        name: 'project',
+        path: 'projects',
+        name: 'projects',
         component: () => import('@/views/ProjectView.vue')
       },
       {
-        path: 'note',
-        name: 'note',
-        component: () => import('@/views/NoteView.vue')
+        path: 'posts',
+        name: 'posts',
+        component: () => import('@/views/PostListView.vue')
       },
       {
         path: 'about',
@@ -28,7 +28,7 @@ export const routes = [
       },
       {
         path: '/',
-        name: 'post',
+        name: 'posts/:title',
         component: () => import('@/views/PostView.vue'),
         children: VPRoutes
       }

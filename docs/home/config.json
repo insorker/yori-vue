@@ -1,15 +1,15 @@
 {
+  "html-title": "insorker's blog",
   "title": "insorker.site",
-  "brief": [
-    "Hi, this is insorker, a student who likes programming.",
-    "Besides, I like video games, go, origami, pixel art, harmonica, whistle... Just for enjoyment and not professional. Maybe we can play together.",
-    "Want to know more about me? Follow the links right below."
+  "profile": [
+    "Hi, this is insorker.",
+    "你好，我是油泥怪。"
   ],
   "social-link": {
-    "github": "https://github.com/insorker",
-    "bilibili": "https://space.bilibili.com/434618849",
-    "zhihu": "https://www.zhihu.com/people/zhu-xing-da-15"
+    "ri-github-fill": "https://github.com/insorker",
+    "ri-bilibili-fill": "https://space.bilibili.com/434618849",
+    "ri-zhihu-line": "https://www.zhihu.com/people/zhu-xing-da-15"
   },
-  "image-url": "https://image.insorker.site/2024/03/a546ee9bcddb9668fdebf925bd930fee.png",
+  "image-link": "https://image.insorker.site/2024/03/a546ee9bcddb9668fdebf925bd930fee.png",
   "image-offset": "-50%"
 }

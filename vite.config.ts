@@ -113,21 +113,21 @@ export default defineConfig({
     Pages({
       extensions: ['md'],
       dirs: [
-        { dir: 'docs/note', baseRoute: 'note' },
+        { dir: 'docs/posts', baseRoute: 'posts' },
       ],
       extendRoute(route) {
         const path = route.path.split('/')[1]
-        // route.name 会得到类似于 'note-文件名'的name，所以要去掉'note-'
-        const name = route.name.substring(route.name.indexOf('-') + 1)
+        // route.name 会得到类似于 'posts-文件名'的name，所以要去掉'posts-'
+        const filename = route.name.substring(route.name.indexOf('-') + 1)
 
-        if (path == 'note') {
-          const file = resolve(__dirname, `docs/${path}/${name}.md`)
-          const content = fs.readFileSync(file, "utf-8")
-          const { data } = matter(content, {
+        if (path == 'posts') {
+          const file = resolve(__dirname, `docs/${path}/${filename}.md`)
+          const { data } = matter(fs.readFileSync(file, "utf-8"), {
+            // 如果不用 yaml，markdown 读取的时间格式会有错误，未来可以进行更新
             engines: { yaml: { parse, stringify, }, },
           })
 
-          return { ...route, meta: data }
+          return { ...route, metaPosts: data }
         }
 
         return route

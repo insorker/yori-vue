@@ -7,29 +7,18 @@ defineProps<{
 </script>
 
 <template>
-  <RouterLink class="nav" :to="to">{{ title }}</RouterLink>
-  <div class="nav-brief">{{ '~' + brief }}</div>
+  <div class="logo yr-flex-row-4">
+    <RouterLink :to="to">{{ title }}</RouterLink>
+    <div class="brief">{{ '~' + brief }}</div>
+  </div>
 </template>
 
 <style scoped>
-.nav {
-  color: inherit;
-  font-size: var(--yr-fs-3);
-  white-space: nowrap;
-  text-decoration: none;
-  transition: color 0.5s;
-}
-.nav-brief {
+.brief {
   color: var(--yr-c-text-2);
-  font-size: var(--yr-fs-3);
-  padding: 0rem 1rem;
 }
-.nav:hover {
-  color: var(--yr-c-brand);
-  cursor: pointer;
-}
-@media (max-width: 640px) {
-  .nav-brief {
+@media (max-width: 1024px) {
+  .brief {
     display: none;
   }
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import UserCard from '@/components/common/UserCard.vue';
+import UserCard from '@/components/common/UserCard.vue'
 </script>
 
 <template>

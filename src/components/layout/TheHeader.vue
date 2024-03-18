@@ -8,52 +8,53 @@ import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const logoBrief = ref<string>(route.path)
-watch(() => route.path, (toParams) => {
-  logoBrief.value = toParams
-})
+watch(
+  () => route.path,
+  (toParams) => {
+    logoBrief.value = toParams
+  }
+)
 
 const navItems = ref([
-  { id: 1, name: 'Project', path: '/project' },
-  { id: 2, name: 'Note', path: '/note' },
-  { id: 3, name: 'About', path: '/about' },
+  { id: 1, name: 'Projects', path: '/projects' },
+  { id: 2, name: 'Posts', path: '/posts' },
+  { id: 3, name: 'About', path: '/about' }
 ])
 </script>
 
 <template>
-  <header class="header">
+  <header class="header yr-h3">
     <nav class="nav-left">
       <HeaderLogo title="Insorker" :brief="logoBrief" to="/" />
     </nav>
-    <nav class="header__nav-right">
-      <div class="header__nav-row">
-        <ul class="yr-flex-row yr-gap-0">
-          <li v-for="item in navItems" :key="item.id"><HeaderNav :name="item.name" :path="item.path" /></li>
-          <li class="header__nav-switch">
-            <HeaderSwitch />
-          </li>
-        </ul>
-      </div>
-      <HeaderMenu class="header__nav-col">
+    <nav class="nav-right">
+      <ul class="nav-right-row yr-flex-row-0">
+        <li v-for="item in navItems" :key="item.id">
+          <HeaderNav :name="item.name" :path="item.path" />
+        </li>
+        <li>
+          <HeaderSwitch />
+        </li>
+      </ul>
+      <HeaderMenu class="nav-right-col">
         <ul class="yr-flex-col yr-gap-0">
-          <li v-for="item in navItems" :key="item.id"><HeaderNav :name="item.name" :path="item.path" /></li>
-          <li class="header__nav-switch">
+          <li v-for="item in navItems" :key="item.id">
+            <HeaderNav :name="item.name" :path="item.path" />
+          </li>
+          <li>
             <HeaderSwitch />
           </li>
         </ul>
       </HeaderMenu>
     </nav>
-    
   </header>
 </template>
 
 <style scoped>
-ul li {
-  display: flex;
-}
 header {
   display: flex;
   align-items: center;
-  padding: 0 1.5rem 0 2.5rem;
+  padding: 0 1.5rem;
   border-bottom: 1px solid var(--yr-c-divider);
   background-color: var(--yr-c-bg-blur);
   backdrop-filter: blur(16px);
@@ -64,32 +65,29 @@ header {
   /* flex 需要子元素去撑高度，如果 flex 的子元素没有高度，那么他就没去找子元素是 flex 的高度。所以这里添加了 display: flex */
   display: flex;
 }
-.header__nav-right {
+.nav-right {
   flex: 0 0 auto;
   display: flex;
 }
-.header__nav-col {
+.nav-right-row {
   display: none;
-}
-.header__nav-col ul li {
-  border-bottom: 1px solid var(--yr-c-divider);
-}
-.header__nav-col ul li:last-child {
-  border-bottom: none;
-}
-.header__nav-witch {
-  flex: 0 0 auto;
   align-items: center;
 }
-@media (max-width: 640px) {
+.nav-right-col ul li {
+  border-bottom: 1px solid var(--yr-c-divider);
+}
+.nav-right-col ul li:last-child {
+  border-bottom: none;
+}
+@media (min-width: 640px) {
   header {
-    padding: 0 1.5rem;
+    padding: 0 1.5rem 0 2.5rem;
   }
-  .header__nav-row {
+  .nav-right-row {
+    display: flex;
+  }
+  .nav-right-col {
     display: none;
-  }
-  .header__nav-col {
-    display: block;
   }
 }
 </style>
