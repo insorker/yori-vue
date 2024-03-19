@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import '@/assets/markdown/github-markdown.css'
 import { useMetaPostsStore } from '@/stores/MetaPosts'
 import { useTheme } from '@/utils/theme'
 import Giscus from '@giscus/vue'
-import 'highlight.js/styles/github.css'
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
+import '@/assets/markdown/github-markdown-modify.css'
+import 'highlight.js/styles/github.css'
 
 const route = useRoute()
 const { metaPosts } = useMetaPostsStore()
@@ -58,7 +58,7 @@ const { themeYori } = useTheme()
 <style scoped>
 @import url('https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css');
 .post {
-  max-width: 720px;
+  max-width: 65ch;
   margin: var(--yr-pd-top) auto;
 }
 .header {
@@ -74,4 +74,3 @@ const { themeYori } = useTheme()
   font-family: inherit;
 }
 </style>
-@/stores/MetaPosts

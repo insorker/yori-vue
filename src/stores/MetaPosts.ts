@@ -30,8 +30,9 @@ export const useMetaPostsTableStore = defineStore('meta-post-table', () => {
   const metaPostsTable = ref<MetaPostsTable>({})
 
   for (const item of <any>VPRoutes) {
-    const year: number = -new Date(item.metaPosts.date).getFullYear()
-    const month: number = -(new Date(item.metaPosts.date).getMonth() + 1)
+    const year: number = new Date(item.metaPosts.date).getFullYear()
+    const month: number = new Date(item.metaPosts.date).getMonth() + 1
+    console.log(year, month)
 
     if (!metaPostsTable.value[year]) {
       metaPostsTable.value[year] = {}
