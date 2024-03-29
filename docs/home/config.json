@@ -1,15 +1,27 @@
 {
   "html-title": "insorker's blog",
-  "title": "Hello, I'm insorker.",
+  "title": "insorker",
   "profile": [
-    "Hi, this is insorker.",
-    "你好，我是油泥怪。"
+    "Xian, China",
+    "Back-end developer / Amateur gamer"
   ],
-  "social-link": {
-    "ri-github-fill": "https://github.com/insorker",
-    "ri-bilibili-fill": "https://space.bilibili.com/434618849",
-    "ri-zhihu-line": "https://www.zhihu.com/people/zhu-xing-da-15"
-  },
+  "social-link": [
+    {
+      "icon": "ri-github-fill",
+      "link": "https://github.com/insorker",
+      "color": "#202529"
+    },
+    {
+      "icon": "ri-bilibili-fill",
+      "link": "https://space.bilibili.com/434618849",
+      "color": "#e76a8d"
+    },
+    {
+      "icon": "ri-zhihu-line",
+      "link": "https://www.zhihu.com/people/zhu-xing-da-15",
+      "color": "#007ce7"
+    }
+  ],
   "image-link": "https://image.insorker.site/2024/03/a546ee9bcddb9668fdebf925bd930fee.png",
   "image-offset": "-50%"
 }

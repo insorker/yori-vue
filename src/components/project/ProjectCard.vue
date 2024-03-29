@@ -30,10 +30,11 @@ defineProps<{
   border-radius: 0.75rem;
 }
 .icon {
+  flex: 0 0 auto;
   font-size: var(--yr-fs-12);
 }
 .name {
-  font-weight: 600;
+  font-weight: bold;
 }
 .desc {
   color: var(--yr-c-text-2);

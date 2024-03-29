@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import VPRoutes from '~pages'
 
 interface MetaPosts {
-  id: number
   path: string
   meta: any
 }
@@ -12,12 +11,11 @@ interface MetaPostsTable {
   [year: number]: { [month: number]: MetaPosts[] }
 }
 
-export const useMetaPostsStore = defineStore('meta-post', () => {
+export const useMetaPostsStore = defineStore('meta-posts', () => {
   const metaPosts = ref<Record<string, MetaPosts>>({})
 
   for (const item of <any>VPRoutes) {
     metaPosts.value[item.path] = {
-      id: 0,
       path: item.path,
       meta: item.metaPosts
     }
@@ -26,13 +24,12 @@ export const useMetaPostsStore = defineStore('meta-post', () => {
   return { metaPosts }
 })
 
-export const useMetaPostsTableStore = defineStore('meta-post-table', () => {
+export const useMetaPostsTableStore = defineStore('meta-posts-table', () => {
   const metaPostsTable = ref<MetaPostsTable>({})
 
   for (const item of <any>VPRoutes) {
     const year: number = new Date(item.metaPosts.date).getFullYear()
     const month: number = new Date(item.metaPosts.date).getMonth() + 1
-    console.log(year, month)
 
     if (!metaPostsTable.value[year]) {
       metaPostsTable.value[year] = {}
@@ -42,7 +39,6 @@ export const useMetaPostsTableStore = defineStore('meta-post-table', () => {
     }
 
     metaPostsTable.value[year][month].push({
-      id: item.id,
       path: item.path,
       meta: item.metaPosts
     })
@@ -59,4 +55,24 @@ export const useMetaPostsTableStore = defineStore('meta-post-table', () => {
   }
 
   return { metaPostsTable }
+})
+
+export const useMetaPostsLatestStore = defineStore('meta-posts-latest', () => {
+  const metaPostsArray = ref<MetaPosts[]>([])
+
+  for (const item of <any>VPRoutes) {
+    metaPostsArray.value.push({
+      path: item.path,
+      meta: item.metaPosts
+    })
+  }
+
+  metaPostsArray.value.sort((a, b) => {
+    const da = new Date(a.meta.date).getTime()
+    const db = new Date(b.meta.date).getTime()
+    return db - da
+  })
+  const metaPostsLatest = metaPostsArray.value.slice(0, 4)
+
+  return { metaPostsLatest }
 })

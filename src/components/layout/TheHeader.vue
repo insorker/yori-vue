@@ -2,7 +2,7 @@
 import HeaderLogo from './HeaderLogo.vue'
 import HeaderNav from './HeaderNav.vue'
 import HeaderMenu from './HeaderMenu.vue'
-import HeaderSwitch from './ HeaderSwitch.vue'
+import HeaderSwitch from './HeaderSwitch.vue'
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 

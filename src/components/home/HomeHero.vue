@@ -4,40 +4,54 @@ import SocialLink from '@/components/common/SocialLink.vue'
 defineProps<{
   title: string
   profile: string[]
-  social_link: Record<string, string>
+  social_link: Record<string, string>[]
 }>()
 </script>
 
 <template>
-  <div class="hero yr-flex-col-12">
-    <h1 class="title yr-h1">
-      <span>{{ title }}</span>
-    </h1>
-    <ul class="profile yr-flex-col-4">
-      <li v-for="(value, idx) in profile" :key="idx">
-        <span>{{ value }}</span>
-      </li>
-      <li class="social-link yr-flex-row-4">
-        <SocialLink v-for="(value, key, idx) in social_link" :key="idx" :icon="key" :link="value" />
-      </li>
-    </ul>
+  <div class="hero yr-flex-row-8">
+    <img src="/avatar.png" alt="avator" />
+    <div class="content yr-flex-col-4">
+      <div class="title">{{ title }}</div>
+      <div class="profile yr-flex-col-2">
+        <div v-for="(item, idx) in profile" :key="idx">{{ item }}</div>
+      </div>
+      <div class="social-link yr-flex-row-4">
+        <SocialLink
+          v-for="(item, idx) in social_link"
+          :key="idx"
+          :icon="item.icon"
+          :link="item.link"
+          :color="item.color"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .hero {
-  text-align: center;
+  text-align: left;
+  font-size: var(--avator-size);
+}
+img {
+  vertical-align: middle;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+}
+.content {
+  justify-content: left;
 }
 .title {
-  margin-bottom: 0px;
+  font-size: var(--yr-fs-10);
+  line-height: var(--yr-fs-10);
+  font-weight: bold;
 }
 .profile {
   color: var(--yr-c-text-2);
 }
 .social-link {
-  margin-top: 0.5rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: left;
 }
 </style>

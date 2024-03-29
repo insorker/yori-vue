@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "npm run format && vite",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite-ssg build",
@@ -12,20 +12,20 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@giscus/vue": "^3.0.0",
-    "@mdit/plugin-katex": "^0.8.0",
-    "@remixicon/vue": "^4.2.0",
     "@tsconfig/node18": "^18.2.2",
+    "vue": "^3.4.21",
+    "pinia": "^2.0.35",
     "@unhead/vue": "^1.3.3",
+    "remixicon": "^4.2.0",
+    "@remixicon/vue": "^4.2.0",
+    "@mdit/plugin-katex": "^0.8.0",
+    "markdown-it": "^14.0.0",
     "gray-matter": "^4.0.3",
+    "yaml": "^2.2.2",
     "highlight.js": "^11.8.0",
     "katex": "^0.16.9",
-    "markdown-it": "^14.0.0",
-    "pinia": "^2.0.35",
-    "remixicon": "^4.2.0",
-    "save": "^2.9.0",
-    "vue": "^3.4.21",
-    "yaml": "^2.2.2"
+    "@giscus/vue": "^3.0.0",
+    "save": "^2.9.0"
   },
   "devDependencies": {
     "@iconify/vue": "^4.1.1",

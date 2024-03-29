@@ -2,6 +2,7 @@
 defineProps<{
   link: string
   icon: string
+  color: string
 }>()
 </script>
 
@@ -18,7 +19,7 @@ a {
 }
 a:hover {
   color: var(--yr-c-text-inverse-1);
-  background-color: var(--yr-c-brand);
+  background-color: v-bind(color);
 }
 .link {
   padding: 0.6rem;
