@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AvatarHeader from '@/components/common/AvatarHeader.vue'
-import ProjectCard from '@/components/project/ProjectCard.vue'
+import ProjectCard from '@/components/projects/ProjectCard.vue'
 import projects from '../../docs/projects/config.json'
 </script>
 
