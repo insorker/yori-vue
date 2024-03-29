@@ -6,20 +6,7 @@ const fold = ref(true)
 
 <template>
   <div class="dropdown">
-    <div class="dropdown__button" @click="fold = !fold">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        aria-hidden="true"
-        role="img"
-        width="32"
-        height="32"
-        preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 32 32"
-      >
-        <path d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path>
-      </svg>
-    </div>
+    <IconSets icon="tabler:align-right" class="button" @click="fold = !fold" />
     <div :class="['dropdown__content', { dropdown__unfold: !fold }]" @click="fold = true">
       <div class="dropdown__list">
         <slot />
@@ -33,11 +20,10 @@ const fold = ref(true)
 .dropdown {
   width: 30px;
 }
-.dropdown__button {
-  color: black;
-  background: inherit;
+.button {
+  font-size: var(--yr-fs-6);
 }
-.dropdown__button:hover {
+.button:hover {
   cursor: pointer;
 }
 .dropdown__button svg {
