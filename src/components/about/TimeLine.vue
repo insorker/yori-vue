@@ -44,7 +44,7 @@ defineProps<{
   left: -5px;
   width: 8px;
   height: 8px;
-  background: var(--yr-c-bg-inverse);
+  background-color: var(--yr-c-bg-inverse);
   border-radius: 50%;
 }
 .time,

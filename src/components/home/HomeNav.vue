@@ -20,12 +20,9 @@ defineProps<{
   border-radius: 0.5rem;
   padding: 0 0.5rem;
   background-color: var(--yr-c-bg);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
 }
 .nav:hover {
   color: var(--yr-c-brand);
-  background: var(--yr-c-bg-soft);
+  background-color: var(--yr-c-bg-soft);
 }
 </style>

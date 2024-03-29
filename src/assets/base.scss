@@ -20,12 +20,14 @@ video {
 a {
   color: inherit;
   text-decoration: none;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
 }
 
 a:hover {
   cursor: pointer;
   color: var(--yr-c-brand);
-  transition: color 0.5s;
 }
 
 ul,
@@ -53,8 +55,8 @@ body {
     sans-serif;
   background-color: var(--yr-c-bg);
   transition:
-    color 0.3s,
-    background-color 0.3s;
+    color 0.3s ease,
+    background-color 0.3s ease;
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/overflow */
   overflow: overlay;
 }
