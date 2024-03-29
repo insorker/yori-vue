@@ -1,16 +1,18 @@
+<script lang="ts" setup>
+import AvatarHeader from '@/components/common/AvatarHeader.vue'
+import TimeLine from '@/components/about/TimeLine.vue'
+import config from '../../docs/about/config.json'
+</script>
+
 <template>
-  <div class="about">
-    你似乎来到了没有知识存在的荒原···
-    <!-- <UserCard /> -->
+  <div class="about yr-flex-col-16">
+    <AvatarHeader title="about" />
+    <TimeLine :items="config"></TimeLine>
   </div>
 </template>
 
 <style scoped>
 .about {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding-top: 30vh;
+  padding: 4rem 0rem 0rem;
 }
 </style>
