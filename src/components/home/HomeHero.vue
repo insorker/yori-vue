@@ -10,7 +10,7 @@ defineProps<{
 
 <template>
   <div class="hero yr-flex-row-8">
-    <img src="/avatar.png" alt="avator" />
+    <img src="/avatar.webp" alt="avatar" />
     <div class="content yr-flex-col-4">
       <div class="title">{{ title }}</div>
       <div class="profile yr-flex-col-2">

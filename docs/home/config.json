@@ -1,5 +1,8 @@
 {
-  "html-title": "insorker's blog",
+  "head": {
+    "title": "insorker's blog",
+    "description": "insorker's blog"
+  },
   "title": "insorker",
   "profile": [
     "Xian, China",
@@ -22,6 +25,6 @@
       "color": "#007ce7"
     }
   ],
-  "image-link": "https://image.insorker.site/2024/03/a546ee9bcddb9668fdebf925bd930fee.png",
+  "image-link": "https://image.insorker.site/2024/03/fda19fd15ea0937f2e8edee88ab4f732.webp",
   "image-offset": "-50%"
 }
