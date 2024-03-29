@@ -59,6 +59,7 @@ header {
   background-color: var(--yr-c-bg-blur);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  z-index: 10;
 }
 .nav-left {
   flex: 1 0 auto;
