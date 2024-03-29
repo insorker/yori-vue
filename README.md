@@ -57,15 +57,17 @@ Run `npm run build` to build. The output will be placed in the 'dist' folder.
 
 ```json
 {
-  "html-title": "title",
+  "html-title": "title in browser",
   "title": "title",
   "profile": ["array of sentences"],
-  "social-link": {
-    "social-link-icon": "",
-    "e.g. ri-github-fill": "url",
-    "e.g. ri-bilibili-fill": "url",
-    "e.g. ri-zhihu-line": "url"
-  },
+  "social-link": [
+    {
+      "icon": "icon name in remixicon",
+      "link": "link",
+      "color": "hex color"
+    },
+    ...
+  ],
   "image-link": "url",
   "image-offset": "-0% <= string <= -100%"
 }
@@ -103,22 +105,43 @@ The format is as follows:
     "link": "",
     "icon": ""
   },
-  {
-    ...
-  },
   ...
 ]
 ```
 
 Find your project icons on https://icon-sets.iconify.design/.
 
+### docs/about
+
+> Write your about in the file 'about/config.json'.
+
+```yml
+[
+  {
+    "time": "year ~ year",
+    "title": "Where was i?",
+    "brief": "What have i done?",
+    "more": "Tags for me"
+  },
+  ...
+  {
+    "time": "year ~ now",
+    "title": "Where am i?",
+    "brief": "What am i doing?",
+    "more": "Tags for me"
+  }
+]
+```
+
 ## Deploy
 
-> Need more development in future.
+> TODO: Need more development in future.
 
-`git clone` and change the `docs` folder.
+Clone the repository and then only change the `docs` and the `public` folder.
 
-Push the `dist` folder to your github page.
+Run `npm run build`.
+
+Push the dist folder to the repository to deploy on GitHub Pages.
 
 ## License
 
