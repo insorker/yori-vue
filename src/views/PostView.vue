@@ -58,7 +58,7 @@ const { themeYori } = useTheme()
 <style scoped>
 @import url('https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css');
 .post {
-  max-width: 65ch;
+  max-width: 70ch;
   margin: var(--yr-pd-top) auto;
 }
 .header {

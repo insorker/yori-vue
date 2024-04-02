@@ -698,7 +698,7 @@
 
 .markdown-body table tr {
   background-color: var(--color-canvas-default);
-  border-top: 1px solid var(--color-border-muted);
+  /* border-top: 1px solid var(--color-border-muted); */
 }
 
 .markdown-body table tr:nth-child(2n) {

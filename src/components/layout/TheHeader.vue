@@ -74,6 +74,12 @@ header {
   display: none;
   align-items: center;
 }
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 .nav-right-col ul li {
   padding: 0.5rem;
   border-bottom: 1px solid var(--yr-c-divider);

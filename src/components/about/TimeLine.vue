@@ -28,6 +28,12 @@ defineProps<{
 </template>
 
 <style scoped>
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 .time-line {
   max-width: 32rem;
   margin: 0 auto;
