@@ -91,6 +91,18 @@ notbyai?: boolean (default true)
 
 "?" is not part of the configuration, it indicates that the option can be left blank. Replace 'YYYY-MM-DD' with the date you created or last modified the file.
 
+> !!! IMPORTANT !!!
+>
+> Markdown's filename must be english! Since the issue from vue-router below:
+>
+> https://github.com/vuejs/vue-router/issues/3110
+>
+> also mentioned here:
+>
+> https://github.com/vuejs/vue-router/issues/838
+>
+> https://github.com/vuepress-reco/vuepress-theme-reco-1.x/issues/276
+
 ### docs/projects
 
 > Write repositories' infomation in the file 'projects/config.json'.
