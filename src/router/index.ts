@@ -1,4 +1,4 @@
-import VPRoutes from '~pages'
+import { default as PostsRoutes } from '~pages'
 
 export const routes = [
   {
@@ -30,7 +30,7 @@ export const routes = [
         path: '/',
         name: 'posts/:title',
         component: () => import('@/views/PostView.vue'),
-        children: VPRoutes
+        children: [...PostsRoutes]
       }
     ]
   }

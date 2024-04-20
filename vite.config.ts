@@ -1,13 +1,13 @@
-import { fileURLToPath, URL } from 'node:url'
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import Pages from 'vite-plugin-pages'
-import Markdown from 'vite-plugin-md'
 import { katex } from "@mdit/plugin-katex"
-import hljs from 'highlight.js/lib/common'
+import vue from '@vitejs/plugin-vue'
 import fs from 'fs'
-import { resolve } from "path"
 import matter from "gray-matter"
+import hljs from 'highlight.js/lib/common'
+import { fileURLToPath, URL } from 'node:url'
+import { resolve } from "path"
+import { defineConfig } from 'vite'
+import Markdown from 'vite-plugin-md'
+import Pages from 'vite-plugin-pages'
 import { parse, stringify } from 'yaml'
 
 // https://github.com/vuejs/vitepress/issues/529#issuecomment-1151186631
@@ -116,18 +116,18 @@ export default defineConfig({
         { dir: 'docs/posts', baseRoute: 'posts' },
       ],
       extendRoute(route) {
+        // 详见 console.log(route)
         const path = route.path.split('/')[1]
-        // route.name 会得到类似于 'posts-文件名'的name，所以要去掉'posts-'
-        const filename = route.name.substring(route.name.indexOf('-') + 1)
+        const name = route.name.substring(route.name.indexOf('-') + 1)
 
         if (path == 'posts') {
-          const file = resolve(__dirname, `docs/${path}/${filename}.md`)
+          const file = resolve(__dirname, `docs/${path}/${name}.md`)
           const { data } = matter(fs.readFileSync(file, "utf-8"), {
             // 如果不用 yaml，markdown 读取的时间格式会有错误，未来可以进行更新
             engines: { yaml: { parse, stringify, }, },
           })
 
-          return { ...route, metaPosts: data }
+          return { ...route, meta: data }
         }
 
         return route

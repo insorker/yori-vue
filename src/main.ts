@@ -8,8 +8,6 @@ import 'remixicon/fonts/remixicon.css'
 import './assets/yori.scss'
 
 export const createApp = ViteSSG(App, { routes }, ({ app }) => {
-  const pinia = createPinia()
-
-  app.use(pinia)
+  app.use(createPinia())
   app.component('IconSets', Icon)
 })

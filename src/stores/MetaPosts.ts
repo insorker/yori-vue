@@ -17,7 +17,7 @@ export const useMetaPostsStore = defineStore('meta-posts', () => {
   for (const item of <any>VPRoutes) {
     metaPosts.value[item.path] = {
       path: item.path,
-      meta: item.metaPosts
+      meta: item.meta
     }
   }
 
@@ -28,8 +28,8 @@ export const useMetaPostsTableStore = defineStore('meta-posts-table', () => {
   const metaPostsTable = ref<MetaPostsTable>({})
 
   for (const item of <any>VPRoutes) {
-    const year: number = new Date(item.metaPosts.date).getFullYear()
-    const month: number = new Date(item.metaPosts.date).getMonth() + 1
+    const year: number = new Date(item.meta.date).getFullYear()
+    const month: number = new Date(item.meta.date).getMonth() + 1
 
     if (!metaPostsTable.value[year]) {
       metaPostsTable.value[year] = {}
@@ -40,7 +40,7 @@ export const useMetaPostsTableStore = defineStore('meta-posts-table', () => {
 
     metaPostsTable.value[year][month].push({
       path: item.path,
-      meta: item.metaPosts
+      meta: item.meta
     })
   }
 
@@ -63,7 +63,7 @@ export const useMetaPostsLatestStore = defineStore('meta-posts-latest', () => {
   for (const item of <any>VPRoutes) {
     metaPostsArray.value.push({
       path: item.path,
-      meta: item.metaPosts
+      meta: item.meta
     })
   }
 

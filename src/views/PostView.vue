@@ -1,16 +1,17 @@
 <script setup lang="ts">
+import '@/assets/markdown/github-markdown-modify.css'
 import { useMetaPostsStore } from '@/stores/MetaPosts'
 import { useTheme } from '@/utils/theme'
 import Giscus from '@giscus/vue'
+import 'highlight.js/styles/github.css'
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
-import '@/assets/markdown/github-markdown-modify.css'
-import 'highlight.js/styles/github.css'
 
 const route = useRoute()
 const { metaPosts } = useMetaPostsStore()
 const meta = ref(metaPosts[route.path].meta)
 const { themeYori } = useTheme()
+console.log(route)
 </script>
 
 <template>
