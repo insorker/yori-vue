@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
 import { useHead } from '@unhead/vue'
+import { switchTheme } from '@/utils/theme'
 import config from '../docs/home/config.json'
 
 useHead({
@@ -12,6 +12,8 @@ useHead({
     }
   ]
 })
+
+switchTheme()
 </script>
 
 <template>
