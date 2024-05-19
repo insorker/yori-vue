@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>Powered by <a href="https://github.com/insorker/yori-vue">yori-vue</a> © 2023-2024</p>
+    <p>Powered by <a href="https://github.com/insorker/yori-vue">yori-vue</a> © 2023-{{ new Date().getFullYear() }}</p>
   </footer>
 </template>
 
