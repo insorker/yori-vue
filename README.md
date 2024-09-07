@@ -86,6 +86,7 @@ title: Your Title Here
 date: YYYY-MM-DD
 brief: Your Brief Here
 image?: Image Url (default "")
+series?: Series
 notbyai?: boolean (default true)
 ```
 
