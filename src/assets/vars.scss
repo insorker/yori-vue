@@ -86,19 +86,8 @@
 }
 
 :root {
-  --yr-pd-top: 4rem;
+  --yr-pd-top: 3rem;
   --yr-pd-side: 2rem;
+  --yr-head-width: 64rem;
   --yr-main-width: 56rem;
-}
-
-@media (min-width: 640px) {
-  :root {
-    --yr-pd-side: 6rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --yr-pd-side: 12rem;
-  }
 }

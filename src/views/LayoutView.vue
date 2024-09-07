@@ -4,37 +4,39 @@ import TheFooter from '@/components/layout/TheFooter.vue'
 </script>
 
 <template>
-  <div class="page yr-flex-col-0">
+  <div class="layout yr-flex-col-0">
     <TheHeader class="header" />
-    <main class="container"><RouterView /></main>
+    <main class="container">
+      <RouterView />
+    </main>
     <div class="spacer"></div>
-    <TheFooter />
+    <TheFooter class="footer" />
   </div>
 </template>
 
 <style scoped>
-.page {
+.layout {
   min-height: 100vh;
+  padding: var(--yr-pd-top) 0rem;
 }
 .header {
   position: fixed;
   top: 0px;
   left: 0px;
-  right: 0px;
+  width: 100%;
   height: var(--yr-pd-top);
+  padding: 0rem 1rem;
 }
 .container {
-  margin: var(--yr-pd-top) auto 0rem;
-  padding: 0rem var(--yr-pd-side);
   width: 100%;
   max-width: var(--yr-main-width);
+  margin: 0 auto;
+  padding: 0rem var(--yr-pd-side);
 }
 .spacer {
   flex: 1;
 }
-@media (min-width: 1024px) {
-  .container {
-    padding: 0rem 0rem;
-  }
+.footer {
+  padding: 0rem 1.5rem;
 }
 </style>

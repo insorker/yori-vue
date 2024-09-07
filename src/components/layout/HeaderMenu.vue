@@ -18,7 +18,8 @@ const fold = ref(true)
 
 <style scoped>
 .dropdown {
-  width: 30px;
+  align-items: center;
+  padding: var(--yr-fs-2);
 }
 .button {
   font-size: var(--yr-fs-6);
@@ -67,6 +68,6 @@ const fold = ref(true)
   z-index: 9;
 }
 .dropdown__unfold .dropdown__mask {
-  height: calc(100vh - 3.25rem);
+  height: calc(100vh - var(--yr-pd-top));
 }
 </style>

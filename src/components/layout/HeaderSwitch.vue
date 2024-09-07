@@ -24,13 +24,13 @@ const { themeState } = useTheme()
   height: 100%;
   position: relative;
   align-items: center;
-  padding: var(--yr-fs-2);
+  padding: 0.75rem;
 }
 .switch__checkbox {
   position: absolute;
 }
 .switch__button {
-  --yr-switch-height: calc(var(--yr-fs-6));
+  --yr-switch-height: calc(var(--yr-fs-4));
 
   width: calc(2 * var(--yr-switch-height));
   height: var(--yr-switch-height);
