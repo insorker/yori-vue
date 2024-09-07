@@ -18,7 +18,12 @@ const { themeYori } = useTheme()
     <div class="yr-img post-img" v-if="meta.image"><img :src="meta.image" /></div>
     <div class="header yr-flex-col-0">
       <h1 class="title yr-h1">{{ meta.title }}</h1>
-      <div class="date">{{ meta.date }}</div>
+      <div class="brief">
+        <span>{{ meta.date }}</span>
+        <span v-if="'series' in meta">
+          | From <RouterLink :to="meta.series" style="color: var(--yr-c-brand)">{{ meta.series }}</RouterLink> series.
+        </span>
+      </div>
     </div>
     <div class="content yr-flex-col-8">
       <RouterView />
@@ -71,7 +76,7 @@ const { themeYori } = useTheme()
 .title {
   margin-bottom: 10px;
 }
-.date {
+.brief {
   color: var(--yr-c-text-2);
 }
 .markdown-body {

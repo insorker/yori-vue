@@ -25,10 +25,11 @@ const { metaSeries } = useMetaSeriesStore()
 .container {
   display: flex;
   justify-content: center;
+  font-weight: bold;
 }
 .container a {
   margin: 0 1rem;
-  padding: 1rem;
+  padding: 0.75rem;
   background-color: var(--yr-c-bg-soft);
   border-radius: 0.75rem;
 }
