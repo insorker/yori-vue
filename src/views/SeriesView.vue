@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 import AvatarHeader from '@/components/common/AvatarHeader.vue'
 import ListView from '@/views/ListView.vue'
 import { useRoute } from 'vue-router'
@@ -9,13 +9,13 @@ const { metaSeries } = useMetaSeriesStore()
 </script>
 
 <template>
-  <div v-if="route.params.name == '' || !(route.params.name in metaSeries)" class="series yr-flex-col-16">
+  <div v-if="route.params.name == '' || !(route.params.name as string in metaSeries)" class="series yr-flex-col-16">
     <AvatarHeader title="Series" />
     <div class="container">
       <RouterLink v-for="(_, series) in metaSeries" :key="series" :to="'series/' + series" ><div>{{ series }}</div></RouterLink>
     </div>
   </div>
-  <ListView v-else :title="'Series : ' + route.params.name" :metaPostsTable="metaSeries[route.params.name]" />
+  <ListView v-else :title="'Series : ' + route.params.name" :metaPostsTable="metaSeries[route.params.name as string]" />
 </template>
 
 <style scoped>
