@@ -5,16 +5,18 @@ const { themeState } = useTheme()
 </script>
 
 <template>
-  <div class="switch">
-    <keep-alive
-      ><input
-        class="switch__checkbox"
-        type="checkbox"
-        id="yr-id-switch-theme"
-        v-model="themeState"
-        @change="switchTheme"
-    /></keep-alive>
-    <label for="yr-id-switch-theme" class="switch__button"></label>
+  <div style="align-items: center">
+    <div class="switch">
+      <keep-alive
+        ><input
+          class="switch__checkbox"
+          type="checkbox"
+          id="yr-id-switch-theme"
+          v-model="themeState"
+          @change="switchTheme"
+      /></keep-alive>
+      <label for="yr-id-switch-theme" class="switch__button"></label>
+    </div>
   </div>
 </template>
 
