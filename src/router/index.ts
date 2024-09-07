@@ -22,6 +22,16 @@ export const routes = [
         component: () => import('@/views/PostListView.vue')
       },
       {
+        path: 'tags',
+        name: 'tags',
+        component: () => import('@/views/TagsView.vue')
+      },
+      {
+        path: 'series/:name?',
+        name: 'series',
+        component: () => import('@/views/SeriesView.vue')
+      },
+      {
         path: 'about',
         name: 'about',
         component: () => import('@/views/AboutView.vue')

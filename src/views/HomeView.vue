@@ -70,7 +70,6 @@ main {
 .post-link {
   padding: 0 1rem;
 }
-
 @media (min-width: 1024px) {
   .left-container {
     width: 55%;

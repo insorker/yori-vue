@@ -17,10 +17,10 @@ defineProps<{
       <li v-for="(item, idx) in items" :key="idx" class="time-line-item">
         <div class="time-line-dot"></div>
         <div class="content yr-flex-col-0">
-          <div class="yr-h3 time">{{ item.time }}</div>
+          <div class="yr-h4 time">{{ item.time }}</div>
           <div class="yr-h2 title">{{ item.title }}</div>
-          <div class="yr-h3 brief">{{ item.brief }}</div>
-          <div class="yr-h3 more">{{ item.more }}</div>
+          <div class="yr-h4 brief">{{ item.brief }}</div>
+          <div class="yr-h4 more">{{ item.more }}</div>
         </div>
       </li>
     </ul>

@@ -8,7 +8,8 @@ import { ref } from 'vue'
 const navItems = ref([
   { id: 1, name: 'Projects', path: '/projects' },
   { id: 2, name: 'Posts', path: '/posts' },
-  { id: 3, name: 'About', path: '/about' }
+  { id: 4, name: 'Series', path: '/series' },
+  { id: 5, name: 'About', path: '/about' }
 ])
 </script>
 

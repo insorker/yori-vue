@@ -11,12 +11,11 @@ const route = useRoute()
 const { metaPosts } = useMetaPostsStore()
 const meta = ref(metaPosts[route.path].meta)
 const { themeYori } = useTheme()
-console.log(route)
 </script>
 
 <template>
   <div class="post yr-flex-col-16">
-    <div class="yr-img" v-if="meta.image"><img :src="meta.image" /></div>
+    <div class="yr-img post-img" v-if="meta.image"><img :src="meta.image" /></div>
     <div class="header yr-flex-col-0">
       <h1 class="title yr-h1">{{ meta.title }}</h1>
       <div class="date">{{ meta.date }}</div>
@@ -59,8 +58,12 @@ console.log(route)
 <style scoped>
 @import url('https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css');
 .post {
-  max-width: 70ch;
+  max-width: 780px;
   margin: var(--yr-pd-top) auto;
+}
+.post-img {
+  max-width: 640px;
+  margin: 0 auto;
 }
 .header {
   align-items: center;

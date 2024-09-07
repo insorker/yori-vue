@@ -1,15 +1,9 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-const brief = ref<string>(route.path)
-watch(
-  () => route.path,
-  (toParams) => {
-    brief.value = toParams
-  }
-)
+const brief = computed(() => decodeURI(route.path))
 </script>
 
 <template>
