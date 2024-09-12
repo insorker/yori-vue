@@ -37,6 +37,6 @@ import TheFooter from '@/components/layout/TheFooter.vue'
   flex: 1;
 }
 .footer {
-  padding: 0rem 1.5rem;
+  padding: 2rem;
 }
 </style>
