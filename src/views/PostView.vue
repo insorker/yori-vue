@@ -21,7 +21,7 @@ const { themeYori } = useTheme()
       <div class="brief">
         <span>{{ meta.date }}</span>
         <span v-if="'series' in meta">
-          | From <RouterLink :to="meta.series" style="color: var(--yr-c-brand)">{{ meta.series }}</RouterLink> series.
+          | From <RouterLink :to="'/series/' + meta.series" style="color: var(--yr-c-brand)">{{ meta.series }}</RouterLink> series.
         </span>
       </div>
     </div>

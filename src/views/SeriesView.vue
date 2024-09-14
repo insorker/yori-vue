@@ -12,7 +12,7 @@ const { metaSeries } = useMetaSeriesStore()
   <div v-if="route.params.name == '' || !(route.params.name as string in metaSeries)" class="series yr-flex-col-16">
     <AvatarHeader title="series" />
     <div class="container">
-      <RouterLink v-for="(_, series) in metaSeries" :key="series" :to="'series/' + series" ><div>{{ series }}</div></RouterLink>
+      <RouterLink v-for="(_, series) in metaSeries" :key="series" :to="'/series/' + series" ><div>{{ series }}</div></RouterLink>
     </div>
   </div>
   <ListView v-else :title="'series : ' + route.params.name" :metaPostsTable="metaSeries[route.params.name as string]" />
