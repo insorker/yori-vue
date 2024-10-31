@@ -32,18 +32,6 @@ useHead({
     </div>
     <div class="content yr-flex-col-8">
       <RouterView />
-      <a v-if="!('notbyai' in meta) || meta.notbyai" href="https://notbyai.fyi">
-        <img
-          v-if="theme == 'light'"
-          src="/Not-By-AI/Written-By-Human-Not-By-AI-Badge-white.svg"
-          alt="Written by Human, Not by AI"
-        />
-        <img
-          v-else
-          src="/Not-By-AI/Written-By-Human-Not-By-AI-Badge-black.svg"
-          alt="Written by Human, Not by AI"
-        />
-      </a>
     </div>
     <Giscus
       :key="theme"
