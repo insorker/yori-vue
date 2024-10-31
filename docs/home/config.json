@@ -1,7 +1,6 @@
 {
   "head": {
-    "title": "insorker's blog",
-    "description": "insorker's blog"
+    "title": "Home"
   },
   "title": "insorker",
   "profile": [
@@ -25,6 +24,8 @@
       "color": "#007ce7"
     }
   ],
-  "image-link": "https://image.insorker.site/2024/03/fda19fd15ea0937f2e8edee88ab4f732.webp",
-  "image-offset": "-50%"
+  "image": {
+    "url": "https://image.insorker.site/2024/03/fda19fd15ea0937f2e8edee88ab4f732.webp",
+    "offset": "-50%"
+  }
 }

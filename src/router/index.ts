@@ -14,7 +14,7 @@ export const routes = [
       {
         path: 'projects',
         name: 'projects',
-        component: () => import('@/views/ProjectView.vue')
+        component: () => import('@/views/ProjectsView.vue')
       },
       {
         path: 'posts',

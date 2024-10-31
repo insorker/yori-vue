@@ -1,22 +1,22 @@
 <script setup lang="ts">
 import { useTheme, switchTheme } from '@/utils/theme'
 
-const { themeState } = useTheme()
+const { theme } = useTheme()
 </script>
 
 <template>
   <div style="align-items: center">
-    <div class="switch">
+    <!-- <div class="switch">
       <keep-alive
         ><input
           class="switch__checkbox"
           type="checkbox"
           id="yr-id-switch-theme"
-          v-model="themeState"
+          v-model="theme == THEME_LIGHT"
           @change="switchTheme"
       /></keep-alive>
       <label for="yr-id-switch-theme" class="switch__button"></label>
-    </div>
+    </div> -->
   </div>
 </template>
 

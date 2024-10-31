@@ -1,18 +1,23 @@
 <script setup lang="ts">
-import HomeImage from '@/components/home/HomeImage.vue'
-import HomeNav from '@/components/home/HomeNav.vue'
-import TheFooter from '@/components/layout/TheFooter.vue'
 import { ref } from 'vue'
-import config from '../../docs/home/config.json'
 import HomeHero from '@/components/home/HomeHero.vue'
+import HomeNav from '@/components/home/HomeNav.vue'
+import HomeImage from '@/components/home/HomeImage.vue'
+import TheFooter from '@/components/layout/TheFooter.vue'
 import { useMetaPostsLatestStore } from '@/stores/MetaPosts'
+import { useHead } from '@unhead/vue'
+import config from '../../docs/home/config.json'
 
 const title = ref(config['title'])
 const profile = ref(config['profile'])
 const social_link = ref(config['social-link'])
-const image_link = ref(config['image-link'])
-const image_offset = ref(config['image-offset'])
+const image_url = ref(config['image'].url)
+const image_offset = ref(config['image'].offset)
 const { metaPostsLatest } = useMetaPostsLatestStore()
+
+useHead({
+  title: config['head'].title
+})
 </script>
 
 <template>
@@ -38,7 +43,7 @@ const { metaPostsLatest } = useMetaPostsLatestStore()
       </div>
     </div>
     <div class="right-container">
-      <HomeImage :link="image_link" :offset="image_offset" />
+      <HomeImage :url="image_url" :offset="image_offset" />
     </div>
   </main>
 </template>

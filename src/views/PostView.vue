@@ -1,16 +1,21 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import { useRoute } from 'vue-router'
+import { useHead } from '@unhead/vue'
 import '@/assets/markdown/github-markdown-modify.css'
 import { useMetaPostsStore } from '@/stores/MetaPosts'
 import { useTheme } from '@/utils/theme'
 import Giscus from '@giscus/vue'
 import 'highlight.js/styles/github.css'
-import { ref } from 'vue'
-import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const { metaPosts } = useMetaPostsStore()
 const meta = ref(metaPosts[route.path].meta)
-const { themeYori } = useTheme()
+const { theme } = useTheme()
+
+useHead({
+  title: meta.value.title
+})
 </script>
 
 <template>
@@ -29,7 +34,7 @@ const { themeYori } = useTheme()
       <RouterView />
       <a v-if="!('notbyai' in meta) || meta.notbyai" href="https://notbyai.fyi">
         <img
-          v-if="themeYori == 'light'"
+          v-if="theme == 'light'"
           src="/Not-By-AI/Written-By-Human-Not-By-AI-Badge-white.svg"
           alt="Written by Human, Not by AI"
         />
@@ -41,7 +46,7 @@ const { themeYori } = useTheme()
       </a>
     </div>
     <Giscus
-      :key="themeYori"
+      :key="theme"
       repo="insorker/insorker.github.io"
       repo-id="MDEwOlJlcG9zaXRvcnkzMDI5NTUyMjU="
       category="Announcements"
@@ -51,7 +56,7 @@ const { themeYori } = useTheme()
       reactions-enabled="1"
       emit-metadata="0"
       input-position="top"
-      :theme="themeYori"
+      :theme="theme"
       lang="zh-CN"
       loading="lazy"
       crossorigin="anonymous"

@@ -1,20 +1,25 @@
-[
-  {
-    "name": "My Blog",
-    "desc": "Hi, i'm insorker. This is my blog.",
-    "link": "https://insorker.github.io",
-    "icon": "fluent-emoji-flat:newspaper"
+{
+  "head": {
+    "title": "Projects"
   },
-  {
-    "name": "yori-vue",
-    "desc": "A static blog generator, based on Vue, inherits from Yori.",
-    "link": "https://github.com/insorker/yori-vue",
-    "icon": "fluent-emoji-flat:bagel"
-  },
-  {
-    "name": "More...",
-    "desc": "Customize with fluent-emoji.",
-    "link": "https://icon-sets.iconify.design/",
-    "icon": "fluent-emoji-flat:face-with-hand-over-mouth"
-  }
-]
+  "projects": [
+    {
+      "name": "My Blog",
+      "desc": "Hi, i'm insorker. This is my blog.",
+      "link": "https://insorker.github.io",
+      "icon": "fluent-emoji-flat:newspaper"
+    },
+    {
+      "name": "yori-vue",
+      "desc": "A static blog generator, based on Vue, inherits from Yori.",
+      "link": "https://github.com/insorker/yori-vue",
+      "icon": "fluent-emoji-flat:bagel"
+    },
+    {
+      "name": "More...",
+      "desc": "Customize with fluent-emoji.",
+      "link": "https://icon-sets.iconify.design/",
+      "icon": "fluent-emoji-flat:face-with-hand-over-mouth"
+    }
+  ]
+}

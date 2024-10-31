@@ -1,0 +1,44 @@
+{
+  "head": {
+    "titleTemplate": "%s | insorker",
+    "title": "blog",
+    "meta": [
+      {
+        "name": "description",
+        "content": "Hi, i'm insorker. This is my blog. 你好，我是 insorker。这是我的博客。"
+      },
+      {
+        "name": "keywords",
+        "content": "blog, 博客"
+      },
+      {
+        "http-equiv": "Content-Language",
+        "content": "zh-CN"
+      },
+      {
+        "name": "author",
+        "content": "insorker"
+      },
+      {
+        "name": "copyright",
+        "content": "版权所有 © 2024 insorker.site"
+      },
+      {
+        "property": "og:title",
+        "content": "insorker's blog"
+      },
+      {
+        "property": "og:description",
+        "content": "Hi, i'm insorker. This is my blog. 你好，我是 insorker。这是我的博客。"
+      },
+      {
+        "property": "og:image",
+        "content": "https://image.insorker.site/2024/03/fda19fd15ea0937f2e8edee88ab4f732.webp"
+      },
+      {
+        "property": "og:url",
+        "content": "https://insorker.site"
+      }
+    ]
+  }
+}

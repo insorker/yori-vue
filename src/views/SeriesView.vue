@@ -1,21 +1,30 @@
 <script lang="ts" setup>
-import AvatarHeader from '@/components/common/AvatarHeader.vue'
+import { useHead } from '@unhead/vue'
+import TheTitle from '@/components/common/TheTitle.vue'
 import ListView from '@/views/ListView.vue'
 import { useRoute } from 'vue-router'
 import { useMetaSeriesStore } from '@/stores/MetaPosts'
+import config from '../../docs/series/config.json'
 
 const route = useRoute()
 const { metaSeries } = useMetaSeriesStore()
+
+useHead({
+  title: config['head'].title
+})
 </script>
 
 <template>
   <div v-if="route.params.name == '' || !(route.params.name as string in metaSeries)" class="series yr-flex-col-16">
-    <AvatarHeader title="series" />
+    <TheTitle :title="config['head'].title" />
     <div class="container">
       <RouterLink v-for="(_, series) in metaSeries" :key="series" :to="'/series/' + series" ><div>{{ series }}</div></RouterLink>
     </div>
   </div>
-  <ListView v-else :title="'series : ' + route.params.name" :metaPostsTable="metaSeries[route.params.name as string]" />
+  <div v-else class="series yr-flex-col-16">
+    <TheTitle :title="config['head'].title + ' : ' + route.params.name" />
+    <ListView :metaPostsTable="metaSeries[route.params.name as string]" />
+  </div>
 </template>
 
 <style scoped>

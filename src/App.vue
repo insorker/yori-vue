@@ -1,19 +1,10 @@
 <script setup lang="ts">
 import { useHead } from '@unhead/vue'
-import { switchTheme } from '@/utils/theme'
-import config from '../docs/home/config.json'
+import { useTheme } from '@/utils/theme'
+import config from '../docs/global_config.json'
 
-useHead({
-  title: config['head'].title,
-  meta: [
-    {
-      name: 'description',
-      content: config['head'].description
-    }
-  ]
-})
-
-switchTheme()
+useHead(config['head'])
+useTheme()
 </script>
 
 <template>

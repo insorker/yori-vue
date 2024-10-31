@@ -1,14 +1,19 @@
 <script setup lang="ts">
-import AvatarHeader from '@/components/common/AvatarHeader.vue'
+import { useHead } from '@unhead/vue'
+import TheTitle from '@/components/common/TheTitle.vue'
 import ProjectCard from '@/components/projects/ProjectCard.vue'
-import projects from '../../docs/projects/config.json'
+import config from '../../docs/projects/config.json'
+
+useHead({
+  title: config['head'].title
+})
 </script>
 
 <template>
   <div class="project yr-flex-col-16">
-    <AvatarHeader title="projects" />
+    <TheTitle :title="config['head'].title" />
     <div class="list">
-      <ProjectCard v-for="(item, idx) in projects" :key="idx" :meta="item" />
+      <ProjectCard v-for="(item, idx) in config.projects" :key="idx" :meta="item" />
     </div>
   </div>
 </template>

@@ -1,13 +1,13 @@
 <script setup lang="ts">
 defineProps<{
-  link: string
+  url: string
   offset: string
 }>()
 </script>
 
 <template>
   <div class="wrapper">
-    <img :src="link" />
+    <img :src="url" />
   </div>
 </template>
 
